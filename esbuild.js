@@ -10,9 +10,10 @@ build({
   bundle: true,
   outfile: 'dist/index.esm.js',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
+  format: 'esm',
   sourcemap: true,
   platform: 'browser',
-  minify: true,
+  minify: false,
 }).catch(() => process.exit(1));
 
 // build the common js file
@@ -21,6 +22,7 @@ build({
   entryPoints: ['src/index.jsx'],
   bundle: true,
   platform: 'node',
+  format: 'cjs',
   outfile: 'dist/index.cjs.js',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
   // minify: true,
