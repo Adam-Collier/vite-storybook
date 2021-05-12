@@ -36,20 +36,6 @@ const TextElement = styled.p`
   & + * {
     margin-top: ${(props) => props.spacing || '1.45rem'};
   }
-
-  @media (max-width: 767px) {
-    --text-5xl: calc(48 / 16 * 1rem);
-    --text-4xl: calc(36 / 16 * 1rem);
-    --text-3xl: calc(30 / 16 * 1rem);
-    --text-2xl: calc(24 / 16 * 1rem);
-    --text-xl: calc(20 / 16 * 1rem);
-    --text-lg: calc(18 / 16 * 1rem);
-    --text-md: calc(16 / 16 * 1rem);
-    --text-base: calc(14 / 16 * 1rem);
-    --text-sm: calc(12 / 16 * 1rem);
-    --text-xs: calc(10 / 16 * 1rem);
-    --text-xxs: calc(8 / 16 * 1rem);
-  }
 `;
 
 export const Text = (props) => {
