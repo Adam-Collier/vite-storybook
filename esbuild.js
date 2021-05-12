@@ -8,14 +8,11 @@ rmdir('dist', { recursive: true });
 build({
   entryPoints: ['src/index.jsx'],
   bundle: true,
-  format: 'esm',
-  outfile: 'dist/index.esm.js',
+  outfile: 'dist/index.js',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
+  sourcemap: true,
+  platform: 'browser',
   minify: true,
-  define: {
-    'process.env.NODE_ENV': '"production"',
-    'process.env.DEBUG': 'false',
-  },
 }).catch(() => process.exit(1));
 
 // build the common js file
@@ -26,7 +23,7 @@ build({
   platform: 'node',
   outfile: 'dist/index.cjs.js',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
-  minify: true,
+  // minify: true,
   define: {
     'process.env.NODE_ENV': '"production"',
     'process.env.DEBUG': 'false',
