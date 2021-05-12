@@ -99,7 +99,7 @@ export const Blogpost = ({ data, className }) => {
           />
         </picture>
       </ImageWrapper>
-      <Text as="h3" lineHeight={1.3} weight={600} spacing="0.25rem">
+      <Text as="h3" lineHeight={1.5} weight={600} spacing="0.25rem">
         {stripAndParse(data.title.rendered)}
       </Text>
       <Text size="sm" lineHeight={1.5} weight={400}>
