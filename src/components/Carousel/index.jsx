@@ -26,10 +26,10 @@ const Wrapper = styled.div`
     -khtml-user-select: none;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
   }
   .keen-slider,
   .keen-slider__slide {
-    overflow: hidden;
     position: relative;
   }
   .keen-slider__slide {
@@ -48,23 +48,28 @@ const Wrapper = styled.div`
 `;
 
 const Navigation = styled.div`
+  --nav-inset: 3rem;
   position: absolute;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: var(--nav-inset);
+  right: var(--nav-inset);
+
+  @media (max-width: 1280px) {
+    --nav-inset: 1rem;
+  }
 
   /* if the carousel exists within the Blogposts component move the navigation */
   @media (min-width: 768px) {
     ${BlogpostsWrapper} & {
+      /* alter the nav-inset variable */
+      --nav-inset: 2rem;
       bottom: auto;
-      top: 2rem;
-      right: 2rem;
+      top: var(--nav-inset);
     }
   }
 
   @media (max-width: 767px) {
     bottom: auto;
-    top: 1rem;
-    right: 1rem;
+    top: var(--nav-inset);
   }
 `;
 
