@@ -7,36 +7,53 @@ import { Image } from '../Image';
 import { Stack } from '../Stack';
 
 const Subcopy = styled(Text)`
+  --max-width: calc(400 / 16 * 1rem);
   border-radius: var(--border-radius);
   background: var(--background);
   color: var(--color);
   padding: var(--padding);
-  max-width: 400px;
+  max-width: var(--max-width);
 
+  /* laptop || ipad fill to half */
+  @media (max-width: 1028px) {
+    --max-width: calc(50% - 1rem);
+  }
+
+  /* at phone size take up the fill width */
   @media (max-width: 767px) {
-    max-width: calc(100vw - 2rem);
+    --max-width: 100%;
   }
 `;
 
 const Wrapper = styled.a`
   --padding: 1rem;
   --gap: 0.5;
-  position: relative;
   display: block;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1280px) {
     --padding: 0.75rem;
   }
 `;
 
 const Content = styled(Stack)`
+  --content-padding: 3rem;
   position: absolute;
-  bottom: 3rem;
-  left: 3rem;
+  z-index: 50;
+  bottom: 0;
+  left: 0;
+  padding: var(--content-padding);
+
+  @media (max-width: 1280px) {
+    --content-padding: 1rem;
+
+    button {
+      display: none;
+    }
+  }
 
   @media (max-width: 767px) {
-    bottom: 0.75rem;
-    left: 0.75rem;
+    --content-padding: ${(props) =>
+      props.noContentBackground ? '1.5rem' : '0.75rem'};
   }
 `;
 
@@ -44,18 +61,12 @@ const Logo = styled.img`
   padding: var(--padding);
   background: var(--background);
   display: block;
-  max-width: 380px;
-  max-height: 140px;
+  max-width: clamp(min(240px, 70%), 30vw, 380px);
+  max-height: clamp(100px, 10vw, 140px);
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: left;
-
-  @media (max-width: 767px) {
-    width: 70%;
-    max-width: 380px;
-    max-height: 100px;
-  }
 `;
 
 export const HeroBanner = (props) => {
@@ -85,7 +96,7 @@ export const HeroBanner = (props) => {
   };
 
   let noBackgroundStyles = {
-    '--padding': '0',
+    '--padding': 0,
     '--background': 'none',
     '--gap': 1.5,
     '--color': contentColor || 'var(--primary-black)',
@@ -112,7 +123,7 @@ export const HeroBanner = (props) => {
       contentBackground={contentBackground}
     >
       <Image {...imageProps} />
-      <Content spacing="var(--gap)">
+      <Content spacing="var(--gap)" noContentBackground={noContentBackground}>
         <Logo
           src={logo}
           alt="logo"
