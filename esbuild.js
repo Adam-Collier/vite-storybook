@@ -8,7 +8,7 @@ rmdir('dist', { recursive: true });
 build({
   entryPoints: ['src/index.jsx'],
   bundle: true,
-  outfile: 'dist/index.js',
+  outfile: 'dist/index.esm.js',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
   sourcemap: true,
   platform: 'browser',
