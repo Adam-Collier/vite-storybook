@@ -29,6 +29,7 @@ const Wrapper = styled.a`
   --padding: 1rem;
   --gap: 0.5;
   display: block;
+  position: relative;
 
   @media (max-width: 1280px) {
     --padding: 0.75rem;
