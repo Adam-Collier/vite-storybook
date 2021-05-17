@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Row } from '../Row';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled(Row)`
   display: grid;
   grid-gap: ${(props) => `${props.gap}rem`};
   grid-template-columns: repeat(
@@ -25,6 +26,10 @@ Grid.propTypes = {
   gap: PropTypes.number,
   /** At what value, in pixels, the grid elements should wrap */
   wrapWidth: PropTypes.number,
+  /** Should the element have padding */
+  padding: PropTypes.bool,
+  /** What max width should the element have (if any) */
+  maxWidth: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl']),
 };
 
 Grid.defaultProps = {

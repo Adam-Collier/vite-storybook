@@ -11,15 +11,21 @@ export const Wrapper = styled.div`
 `;
 
 const ConditionalWrapper = (props) => {
-  let { isCarousel, children, slidesPerView, slidesPerViewMob, spacing } =
-    props;
+  let {
+    isCarousel,
+    children,
+    slidesPerView,
+    slidesPerViewMob,
+    spacing,
+    offsetStart,
+  } = props;
 
   return isCarousel ? (
     <Carousel
       slidesPerView={slidesPerView}
       spacing={spacing}
       slidesPerViewMob={slidesPerViewMob}
-      offsetStart={1}
+      offsetStart={offsetStart}
     >
       {children}
     </Carousel>
@@ -63,4 +69,6 @@ Blogposts.propTypes = {
   slidesPerViewMob: PropTypes.number,
   /** Amount of spacing (in pixels) between each slide */
   spacing: PropTypes.number,
+  /** Passed down to the carousel, how much offset there should be */
+  offsetStart: PropTypes.number,
 };

@@ -33,9 +33,14 @@ const TextElement = styled.p`
       letter-spacing: 0.02em;
     `}
 
-  & + * {
-    margin-top: ${(props) => props.spacing || '1.45rem'};
-  }
+  ${(props) =>
+    props.truncate &&
+    css`
+      display: -webkit-box;
+      -webkit-line-clamp: ${props.truncate};
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    `}
 `;
 
 export const Text = (props) => {
@@ -49,6 +54,7 @@ export const Text = (props) => {
     lineHeight,
     weight,
     spacing,
+    truncate,
   } = props;
 
   return (
@@ -60,6 +66,7 @@ export const Text = (props) => {
       lineHeight={lineHeight}
       weight={weight}
       spacing={spacing}
+      truncate={truncate}
     >
       {children}
     </TextElement>
@@ -95,6 +102,8 @@ Text.propTypes = {
   lineHeight: PropTypes.number,
   /** Text contents */
   children: PropTypes.string,
+  /** The number of lines you want to truncate to */
+  truncate: PropTypes.number,
 };
 
 Text.defaultProps = {

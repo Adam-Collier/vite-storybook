@@ -8,11 +8,18 @@ const Box = styled.div`
   background: peachpuff;
 `;
 
-export default {
+const props = {
   title: 'Layout/Stack',
   component: Text,
-  argTypes: { spacing: 1.5 },
+  argTypes: {
+    direction: {
+      type: 'select',
+      options: ['row', 'column'],
+    },
+  },
 };
+
+export default props;
 
 const Template = (args) => (
   <Stack {...args}>
@@ -25,5 +32,9 @@ const Template = (args) => (
 export const Primary = Template.bind({});
 
 Primary.args = {
-  spacing: 1.5,
+  as: 'div',
+  gap: 1.5,
+  direction: 'column',
+  align: 'stretch',
+  justify: 'flex-start',
 };

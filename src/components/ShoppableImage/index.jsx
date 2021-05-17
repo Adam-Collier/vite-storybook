@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Image } from "../Image";
-import { Text } from "../Text";
+import { Image } from '../Image';
+import { Text } from '../Text';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -28,12 +28,12 @@ const StyledText = styled(Text)`
 `;
 
 export const ShoppableImage = (props) => {
-  const { text, link } = props;
+  const { text, link, className, ...imageProps } = props;
 
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <a href={link}>
-        <Image {...props} />
+        <Image {...imageProps} />
         {text && <StyledText heading>{text}</StyledText>}
       </a>
     </Wrapper>
@@ -44,14 +44,14 @@ ShoppableImage.propTypes = {
   /** What should the image link to? */
   link: PropTypes.string,
   /** Text for the CTA */
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 ShoppableImage.defaultProps = {
-  link: "/new-in",
+  link: '/new-in',
   width: 240,
   height: 240,
-  alt: "grid item alt",
-  src: "https://media.missguided.com/i/missguided/playboy_storybook_default",
-  sizes: "(max-width: 767px) 50vw, 298px",
+  alt: 'grid item alt',
+  src: 'https://media.missguided.com/i/missguided/playboy_storybook_default',
+  sizes: '(max-width: 767px) 50vw, 298px',
 };

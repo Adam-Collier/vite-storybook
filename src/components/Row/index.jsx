@@ -11,19 +11,18 @@ export const Row = styled.section`
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 
   max-width: ${(props) => {
     return props.maxWidth ? `var(--width-${props.maxWidth})` : 'none';
   }};
 
-  @media (max-width: 767px) {
-    padding: ${(props) => !props.noPadding && `0 1rem`};
-  }
+  padding: ${(props) => props.padding && `0 1rem`};
 `;
 
 Row.propTypes = {
   /** Choose a predefined max width value */
-  maxWidth: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', '2xl']),
-  /** Decide whether you want the Row to have padding on mobile */
-  noPadding: PropTypes.bool,
+  maxWidth: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl']),
+  /** Decide whether you want the Row to have padding */
+  padding: PropTypes.bool,
 };

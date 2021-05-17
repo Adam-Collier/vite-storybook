@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useKeenSlider } from 'keen-slider/react';
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import { Wrapper as BlogpostsWrapper } from '../Blogposts';
@@ -26,7 +26,6 @@ const Wrapper = styled.div`
     -khtml-user-select: none;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    overflow: hidden;
   }
   .keen-slider,
   .keen-slider__slide {
@@ -45,6 +44,19 @@ const Wrapper = styled.div`
   .keen-slider[data-keen-slider-moves] * {
     pointer-events: none;
   }
+
+  @media (max-width: 767px) {
+    /* if there is an offset being applied make the carousel full width */
+    ${(props) =>
+      !Number.isInteger(props.slidesPerViewMob) &&
+      css`
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      `}
+  }
 `;
 
 const Navigation = styled.div`
@@ -53,18 +65,17 @@ const Navigation = styled.div`
   bottom: var(--nav-inset);
   right: var(--nav-inset);
 
-  @media (max-width: 1280px) {
-    --nav-inset: 1rem;
-  }
-
-  /* if the carousel exists within the Blogposts component move the navigation */
-  @media (min-width: 768px) {
+  /* if the carousel exists within the Blogposts component move the navigation arrows */
+  @media (min-width: 1280px) {
     ${BlogpostsWrapper} & {
-      /* alter the nav-inset variable */
       --nav-inset: 2rem;
       bottom: auto;
       top: var(--nav-inset);
     }
+  }
+
+  @media (max-width: 1280px) {
+    --nav-inset: 0.75rem;
   }
 
   @media (max-width: 767px) {
@@ -92,11 +103,16 @@ const Button = styled.button`
 `;
 
 const CarouselWrapper = styled.div`
-  padding-left: ${(props) => `${props.offsetStart}rem`};
+  overflow: hidden;
+  /* if slidesPerView isnt a whole number add the offset */
+  padding-left: ${(props) =>
+    !Number.isInteger(props.slidesPerView) && `${props.offsetStart}rem`};
 
   @media (max-width: 767px) {
-    width: 100vw;
-    overflow: hidden;
+    /* if slidesPerViewMob isnt a whole number add the offset */
+    padding-left: ${(props) =>
+      !Number.isInteger(props.slidesPerViewMob) && `${props.offsetStart}rem`};
+    width: 100%;
 
     > * {
       overflow: visible;
@@ -133,13 +149,19 @@ export const Carousel = ({
   return (
     <Wrapper
       className="keen-wrapper"
+      offsetStart={offsetStart}
+      slidesPerViewMob={slidesPerViewMob}
       // use data attributes so we can create the config for our static markup
       data-slidesperview={slidesPerView}
       data-slidesperviewmob={slidesPerViewMob}
       data-offsetstart={offsetStart}
       data-spacing={spacing}
     >
-      <CarouselWrapper offsetStart={offsetStart}>
+      <CarouselWrapper
+        offsetStart={offsetStart}
+        slidesPerView={slidesPerView}
+        slidesPerViewMob={slidesPerViewMob}
+      >
         <div ref={sliderRef} className="keen-slider">
           {React.Children.map(children, (child) =>
             React.cloneElement(

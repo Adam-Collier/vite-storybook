@@ -26,5 +26,5 @@ WithCarousel.args = {
   slidesPerView: 3.5,
   slidesPerViewMob: 1.5,
   spacing: 16,
-  isCarousel: true
+  isCarousel: true,
 };
