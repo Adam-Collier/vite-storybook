@@ -9,7 +9,7 @@ const props = {
     maxWidth: {
       control: {
         type: 'select',
-        options: ['sm', 'md', 'lg', 'xl', '2xl'],
+        options: ['none', 'sm', 'md', 'lg', 'xl', '2xl'],
       },
     },
   },
@@ -38,5 +38,6 @@ const Template = (args) => (
 export const Primary = Template.bind({});
 
 Primary.args = {
-  maxWidth: 'md',
+  maxWidth: 'none',
+  padding: true,
 };
