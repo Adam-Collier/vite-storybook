@@ -27,7 +27,6 @@ const Subcopy = styled(Text)`
 
 const Wrapper = styled.a`
   --padding: 1rem;
-  --content-gap: 0.5;
   display: block;
   position: relative;
 
@@ -99,7 +98,6 @@ export const HeroBanner = (props) => {
   let noBackgroundStyles = {
     '--padding': 0,
     '--background': 'none',
-    '--content-gap': 1.5,
     '--color': contentColor || 'var(--primary-black)',
   };
 
@@ -125,7 +123,7 @@ export const HeroBanner = (props) => {
     >
       <Image {...imageProps} />
       <Content
-        gap="var(--content-gap)"
+        gap={noContentBackground ? 1.5 : 0.5}
         noContentBackground={noContentBackground}
       >
         <Logo
