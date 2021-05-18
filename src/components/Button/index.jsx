@@ -79,10 +79,10 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   /** What style your button should have */
   variant: PropTypes.oneOf(['outline', 'fill']),
-  /** Do you want to add an extra class? */
+  /** Add an extra class name */
   className: PropTypes.string,
-  /** run a function when the button is clicked  */
+  /** Run a function when the button is clicked  */
   onClick: PropTypes.func,
-  /** optional: add an icon to your button */
+  /** Optional: add an icon to your button */
   icon: PropTypes.elementType,
 };
