@@ -149,7 +149,7 @@ HeroBanner.propTypes = {
   logo: PropTypes.string,
   /** Subcopy for the banner */
   subcopy: PropTypes.string,
-  /** Select a custom colour for the content background. Make sure it's inline with the hero banner content. */
+  /** Select a custom colour for the content background. Make sure it's in line with the hero banner content. */
   contentBackground: PropTypes.string,
   /** What colour should the text content be? */
   contentColor: PropTypes.string,
