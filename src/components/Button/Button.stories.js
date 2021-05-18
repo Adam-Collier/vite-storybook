@@ -6,6 +6,11 @@ import { Button } from './index.jsx';
 const props = {
   title: 'Components/Button',
   component: Button,
+  argTypes: {
+    size: {
+      options: ['sm', 'md', 'lg'],
+    },
+  },
 };
 
 export default props;
@@ -18,6 +23,7 @@ Filled.args = {
   link: '/new-in',
   text: 'shop now',
   variant: 'fill',
+  isFullWidth: false,
 };
 
 export const Outline = Template.bind({});
@@ -26,6 +32,7 @@ Outline.args = {
   link: '/new-in',
   text: 'shop now',
   variant: 'outline',
+  isFullWidth: false,
 };
 
 export const WithIcon = Template.bind({});
@@ -34,6 +41,7 @@ WithIcon.args = {
   link: '/new-in',
   text: 'Copy',
   variant: 'fill',
+  isFullWidth: false,
   icon: Copy,
 };
 
