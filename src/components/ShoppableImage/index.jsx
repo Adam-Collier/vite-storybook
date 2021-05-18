@@ -46,12 +46,3 @@ ShoppableImage.propTypes = {
   /** Text for the CTA */
   text: PropTypes.string,
 };
-
-ShoppableImage.defaultProps = {
-  link: '/new-in',
-  width: 240,
-  height: 240,
-  alt: 'grid item alt',
-  src: 'https://media.missguided.com/i/missguided/playboy_storybook_default',
-  sizes: '(max-width: 767px) 50vw, 298px',
-};
