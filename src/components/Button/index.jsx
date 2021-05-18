@@ -6,9 +6,10 @@ import styled from 'styled-components';
 const ButtonBase = styled.a`
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 3px;
   overflow: hidden;
-  width: fit-content;
+  width: ${(props) => (props.isFullWidth ? '100%' : 'fit-content')};
   border: 1px solid var(--primary-black);
   padding: ${(props) => (props.text ? `0.75rem 1rem` : `1rem`)};
   background: inherit;
@@ -43,7 +44,15 @@ const OutlineButton = styled(ButtonBase)`
   }
 `;
 
-export const Button = ({ text, link, variant, className, onClick, icon }) => {
+export const Button = ({
+  text,
+  link,
+  variant,
+  className,
+  onClick,
+  icon,
+  isFullWidth,
+}) => {
   let Component;
   let Icon = icon;
 
@@ -63,6 +72,7 @@ export const Button = ({ text, link, variant, className, onClick, icon }) => {
       onClick={onClick}
       icon={icon}
       text={text}
+      isFullWidth={isFullWidth}
     >
       {icon && <Icon size={16} />}
       <Text size="base" heading>
@@ -85,4 +95,6 @@ Button.propTypes = {
   onClick: PropTypes.func,
   /** Optional: add an icon to your button */
   icon: PropTypes.elementType,
+  /** Should the button fill the width of the container */
+  isFullWidth: PropTypes.bool,
 };

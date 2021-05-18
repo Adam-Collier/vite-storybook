@@ -36,3 +36,12 @@ WithIcon.args = {
   variant: 'fill',
   icon: Copy,
 };
+
+export const IsFullWidth = Template.bind({});
+
+IsFullWidth.args = {
+  link: '/new-in',
+  text: 'Copy',
+  variant: 'fill',
+  isFullWidth: true,
+};
