@@ -184,7 +184,4 @@ Image.propTypes = {
 Image.defaultProps = {
   backgroundColor: '#ECECF2',
   quality: 80,
-  alt: 'image component',
-  height: 240,
-  width: 240,
 };

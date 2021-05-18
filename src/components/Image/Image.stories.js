@@ -17,6 +17,7 @@ Primary.args = {
   alt: 'alt example',
   src: 'https://media.missguided.com/i/missguided/playboy_storybook_default',
   backgroundColor: '#ECECF2',
+  sizes: '(max-width: 767px) 50vw, 298px',
 };
 
 export const ArtDirected = Template.bind({});
