@@ -9,6 +9,7 @@ import { HeroBanner } from './components/HeroBanner';
 import { ShoppableImage } from './components/ShoppableImage';
 import { Stack } from './components/Stack';
 import { Text } from './components/Text';
+import { ImageRow } from './components/ImageRow';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -137,6 +138,51 @@ function App() {
             alt="Love Beauty and Planet Hero"
           />
         </Carousel>
+        <ImageRow
+          layout="sidebyside"
+          images={[
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_tops_25_03_21',
+              link: '/collaborations/restyld/restyld-tops',
+              alt: 'this is an image alt',
+            },
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_trousers_25_03_21',
+              link: '/collaborations/restyld/restyld-pants',
+              alt: 'this is an image alt',
+            },
+          ]}
+        ></ImageRow>
+        <ImageRow
+          layout="contrast"
+          images={[
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_tops_25_03_21',
+              link: '/collaborations/restyld/restyld-tops',
+              alt: 'this is an image alt',
+            },
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_trousers_25_03_21',
+              link: '/collaborations/restyld/restyld-pants',
+              alt: 'this is an image alt',
+            },
+          ]}
+        ></ImageRow>
+        <ImageRow
+          layout="overlap"
+          images={[
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_tops_25_03_21',
+              link: '/collaborations/restyld/restyld-tops',
+              alt: 'this is an image alt',
+            },
+            {
+              src: 'https://media.missguided.com/i/missguided/restyld_trousers_25_03_21',
+              link: '/collaborations/restyld/restyld-pants',
+              alt: 'this is an image alt',
+            },
+          ]}
+        ></ImageRow>
         <Stack
           maxWidth="sm"
           gap={1.5}
@@ -151,7 +197,12 @@ function App() {
             From Simple skincare to Cloud Nine straighteners, we’ve got every
             step of your getting ready routine covered.
           </Text>
-          <Button link="/beauty" text="shop all beauty" variant="fill" />
+          <Button
+            link="/beauty"
+            text="shop all beauty"
+            variant="fill"
+            size="md"
+          />
         </Stack>
         <Flex maxWidth="lg" itemFlex={'1 1 180px'} gap={1} padding>
           <ShoppableImage
