@@ -21,6 +21,22 @@ const SIZES = {
   },
 };
 
+const BUTTON_TYPE = {
+  primary: {
+    background: 'var(--primary-black)',
+    color: 'var(--primary-white)',
+    backgroundHover: 'var(--primary-black-hover)',
+    colorHover: 'var(--primary-white-hover)',
+  },
+  secondary: {
+    background: 'var(--primary-white)',
+    color: 'var(--primary-black)',
+    backgroundHover: 'var(--primary-white-hover)',
+    colorHover: 'var(--primary-black-hover)',
+    borderColor: 'var(--primary-black)',
+  },
+};
+
 const ButtonBase = styled.a`
   display: flex;
   align-items: center;
@@ -28,7 +44,7 @@ const ButtonBase = styled.a`
   border-radius: 3px;
   overflow: hidden;
   width: ${(props) => (props.isFullWidth ? '100%' : 'fit-content')};
-  border: 1px solid var(--primary-black);
+  border: 1px solid transparent;
   padding: ${(props) => (props.text ? props.padding : `1rem`)};
   background: inherit;
   border-radius: var(--border-radius);
@@ -43,28 +59,30 @@ const ButtonBase = styled.a`
 `;
 
 const FillButton = styled(ButtonBase)`
-  background: var(--primary-black);
-  color: var(--primary-white);
+  background: ${(props) => props.type.background};
+  color: ${(props) => props.type.color};
+  border-color: ${(props) => props.type.borderColor};
 
   &:hover {
-    background: var(--primary-white);
-    color: var(--primary-black);
+    background: ${(props) => props.type.backgroundHover};
   }
 `;
 
 const OutlineButton = styled(ButtonBase)`
   background: none;
-  color: var(--primary-black);
+  color: ${(props) => props.type.background};
+  border-color: ${(props) => props.type.background};
 
   &:hover {
-    background: var(--primary-black);
-    color: var(--primary-white);
+    color: ${(props) => props.type.backgroundHover};
+    border-color: ${(props) => props.type.backgroundHover};
   }
 `;
 
 export const Button = ({
   text,
   link,
+  type = 'primary',
   variant,
   className,
   onClick,
@@ -75,6 +93,7 @@ export const Button = ({
   let Component;
   let Icon = icon;
   let { padding, fontSize, iconSize } = SIZES[size];
+  let buttonType = BUTTON_TYPE[type];
 
   if (variant === 'fill') {
     Component = FillButton;
@@ -94,6 +113,7 @@ export const Button = ({
       text={text}
       isFullWidth={isFullWidth}
       padding={padding}
+      type={buttonType}
     >
       {icon && <Icon size={iconSize} />}
       <Text size={fontSize} heading>
@@ -116,6 +136,8 @@ Button.propTypes = {
   text: PropTypes.string,
   /** What style your button should have */
   variant: PropTypes.oneOf(['outline', 'fill']),
+  /** What type your button should be e.g primary, secondary */
+  type: PropTypes.string,
   /** Add an extra class name */
   className: PropTypes.string,
   /** Run a function when the button is clicked  */

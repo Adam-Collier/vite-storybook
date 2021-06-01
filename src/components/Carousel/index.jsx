@@ -94,7 +94,7 @@ const Button = styled.button`
 
   &:hover {
     cursor: pointer;
-    background: hsl(0, 0%, 20%);
+    background: var(--primary-black-hover);
   }
 
   &:last-of-type {

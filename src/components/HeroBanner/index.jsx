@@ -73,6 +73,8 @@ export const HeroBanner = (props) => {
   const {
     className,
     buttonText = 'shop now',
+    buttonType,
+    buttonVariant = 'fill',
     link,
     logo,
     subcopy,
@@ -132,7 +134,7 @@ export const HeroBanner = (props) => {
           style={noLogoBackground ? { ...noLogoStyles } : {}}
         />
         <Subcopy>{subcopy}</Subcopy>
-        <Button text={buttonText} variant="fill" />
+        <Button text={buttonText} variant={buttonVariant} type={buttonType} />
       </Content>
     </Wrapper>
   );
@@ -143,6 +145,10 @@ HeroBanner.propTypes = {
   className: PropTypes.string,
   /** What text should the button have? Defaults to shop now */
   buttonText: PropTypes.string,
+  /** What variant should be button use e.g outline, fill */
+  buttonVariant: PropTypes.string,
+  /** Change the type of the button e.g primary, secondary */
+  buttonType: PropTypes.string,
   /** Where should the banner link to? */
   link: PropTypes.string.isRequired,
   /** Image url for the PNG logo */
