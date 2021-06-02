@@ -108,13 +108,13 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
       `}
   }
 `,Pe=L.div`
-  --nav-inset: 3rem;
+  --nav-inset: 2rem;
   position: absolute;
   bottom: var(--nav-inset);
   right: var(--nav-inset);
 
   /* if the carousel exists within the Blogposts component move the navigation arrows */
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     ${G} & {
       --nav-inset: 2rem;
       bottom: auto;
@@ -122,7 +122,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
     }
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --nav-inset: 0.75rem;
   }
 
@@ -346,18 +346,18 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   display: block;
   position: relative;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --padding: 0.75rem;
   }
 `,it=D(V)`
-  --content-padding: 3rem;
+  --content-padding: 2rem;
   position: absolute;
   z-index: 50;
   bottom: 0;
   left: 0;
   padding: var(--content-padding);
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --content-padding: 1rem;
 
     button {

@@ -60,13 +60,13 @@ const Wrapper = styled.div`
 `;
 
 const Navigation = styled.div`
-  --nav-inset: 3rem;
+  --nav-inset: 2rem;
   position: absolute;
   bottom: var(--nav-inset);
   right: var(--nav-inset);
 
   /* if the carousel exists within the Blogposts component move the navigation arrows */
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     ${BlogpostsWrapper} & {
       --nav-inset: 2rem;
       bottom: auto;
@@ -74,7 +74,7 @@ const Navigation = styled.div`
     }
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --nav-inset: 0.75rem;
   }
 

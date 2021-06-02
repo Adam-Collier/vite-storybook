@@ -30,20 +30,20 @@ const Wrapper = styled.a`
   display: block;
   position: relative;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --padding: 0.75rem;
   }
 `;
 
 const Content = styled(Stack)`
-  --content-padding: 3rem;
+  --content-padding: 2rem;
   position: absolute;
   z-index: 50;
   bottom: 0;
   left: 0;
   padding: var(--content-padding);
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1024px) {
     --content-padding: 1rem;
 
     button {
