@@ -1,4 +1,4 @@
-import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";var oe=e=>{var t=document.createElement("textarea");t.innerHTML=e;let r=t.value;return t.remove(),r};import ne from"styled-components";import ve from"react";import T from"prop-types";import be,{css as ie}from"styled-components";var ke=be.p`
+import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";var ie=e=>{var t=document.createElement("textarea");t.innerHTML=e;let r=t.value;return t.remove(),r};import ne from"styled-components";import ve from"react";import T from"prop-types";import be,{css as oe}from"styled-components";var ke=be.p`
   --text-5xl: calc(64 / 16 * 1rem);
   --text-4xl: calc(48 / 16 * 1rem);
   --text-3xl: calc(36 / 16 * 1rem);
@@ -16,7 +16,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   font-family: ${e=>!e.heading&&'"Helvetica Neue", Arial, sans-serif'};
   color: inherit;
 
-  ${e=>e.heading&&ie`
+  ${e=>e.heading&&oe`
       font-family: 'HelveticaNeue-CondensedBold', 'HelveticaNeueBoldCondensed',
         'HelveticaNeue-Bold-Condensed', 'Helvetica Neue Bold Condensed',
         'HelveticaNeueBold', 'HelveticaNeue-Bold', 'Helvetica Neue Bold',
@@ -26,13 +26,13 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
       letter-spacing: 0.02em;
     `}
 
-  ${e=>e.truncate&&ie`
+  ${e=>e.truncate&&oe`
       display: -webkit-box;
       -webkit-line-clamp: ${e.truncate};
       -webkit-box-orient: vertical;
       overflow: hidden;
     `}
-`,g=e=>{let{element:t,children:r,size:o,align:a,heading:n,className:i,lineHeight:d,weight:l,spacing:s,truncate:m}=e;return ve.createElement(ke,{as:t,style:{fontSize:`var(--text-${o})`,textAlign:a},heading:n,className:i,lineHeight:d,weight:l,spacing:s,truncate:m},r)};g.propTypes={heading:T.bool,align:T.oneOf(["left","center","right"]),size:T.oneOf(["5xl","4xl","3xl","2xl","xl","lg","md","base","sm","xs","xxs"]),element:T.string,weight:T.number,lineHeight:T.number,children:T.string,truncate:T.number};g.defaultProps={heading:!1,element:"p",size:"base",align:"left",weight:500,lineHeight:1.75};var Te=ne.a`
+`,g=e=>{let{element:t,children:r,size:i,align:a,heading:n,className:o,lineHeight:d,weight:l,spacing:s,truncate:m}=e;return ve.createElement(ke,{as:t,style:{fontSize:`var(--text-${i})`,textAlign:a},heading:n,className:o,lineHeight:d,weight:l,spacing:s,truncate:m},r)};g.propTypes={heading:T.bool,align:T.oneOf(["left","center","right"]),size:T.oneOf(["5xl","4xl","3xl","2xl","xl","lg","md","base","sm","xs","xxs"]),element:T.string,weight:T.number,lineHeight:T.number,children:T.string,truncate:T.number};g.defaultProps={heading:!1,element:"p",size:"base",align:"left",weight:500,lineHeight:1.75};var Te=ne.a`
   width: 100%;
   text-decoration: none;
   color: inherit;
@@ -63,7 +63,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   .loaded {
     opacity: 1;
   }
-`,se=e=>{let t=e.replace(/(<([^>]+)>)/gi,"");return oe(t)},F=({data:e,className:t})=>{let r=Ae(null);$e(()=>{let i=s=>{s.forEach(m=>{if(m.isIntersecting){let f=Array.from(r.current.querySelectorAll("source"));r.current.lastChild.classList.add("loaded"),f.forEach(y=>{y.srcset=y.dataset.srcset})}})},d={threshold:0,root:null},l=new IntersectionObserver(i,d);return l.observe(r.current.querySelector("img")),()=>l.disconnect()},[r]);let o=e._embedded["wp:featuredmedia"][0].media_details.sizes,n=Object.values(o).sort((i,d)=>i.width-d.width).map(i=>`${i.source_url} ${i.width}w`).join(",");return B.createElement(Te,{className:t,href:e.link},B.createElement(Ce,null,B.createElement("picture",{ref:r},B.createElement("source",{"data-srcset":n,sizes:"(max-width: 767px) 240px, 300px"}),B.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:e.title.rendered,loading:"lazy"}))),B.createElement(g,{as:"h3",lineHeight:1.5,weight:600,spacing:"0.25rem"},se(e.title.rendered)),B.createElement(g,{size:"sm",lineHeight:1.5,weight:400},se(e.excerpt.rendered)))};F.propTypes={data:ae.object.isRequired,className:ae.string};import W from"react";import I from"prop-types";import Ee from"styled-components";import x from"react";import _ from"prop-types";import L,{css as Be}from"styled-components";import{useKeenSlider as Se}from"keen-slider/react";import{ArrowLeft as ze,ArrowRight as We}from"react-feather";var Ie={loop:!0,duration:300},Ne=L.div`
+`,se=e=>{let t=e.replace(/(<([^>]+)>)/gi,"");return ie(t)},F=({data:e,className:t})=>{let r=Ae(null);$e(()=>{let o=s=>{s.forEach(m=>{if(m.isIntersecting){let u=Array.from(r.current.querySelectorAll("source"));r.current.lastChild.classList.add("loaded"),u.forEach(y=>{y.srcset=y.dataset.srcset})}})},d={threshold:0,root:null},l=new IntersectionObserver(o,d);return l.observe(r.current.querySelector("img")),()=>l.disconnect()},[r]);let i=e._embedded["wp:featuredmedia"][0].media_details.sizes,n=Object.values(i).sort((o,d)=>o.width-d.width).map(o=>`${o.source_url} ${o.width}w`).join(",");return B.createElement(Te,{className:t,href:e.link},B.createElement(Ce,null,B.createElement("picture",{ref:r},B.createElement("source",{"data-srcset":n,sizes:"(max-width: 767px) 240px, 300px"}),B.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:e.title.rendered,loading:"lazy"}))),B.createElement(g,{as:"h3",lineHeight:1.5,weight:600,spacing:"0.25rem"},se(e.title.rendered)),B.createElement(g,{size:"sm",lineHeight:1.5,weight:400},se(e.excerpt.rendered)))};F.propTypes={data:ae.object.isRequired,className:ae.string};import W from"react";import I from"prop-types";import He from"styled-components";import x from"react";import _ from"prop-types";import L,{css as Be}from"styled-components";import{useKeenSlider as Se}from"keen-slider/react";import{ArrowLeft as ze,ArrowRight as We}from"react-feather";var Ie={loop:!0,duration:300},Ne=L.div`
   display: block;
   width: 100%;
   position: relative;
@@ -146,7 +146,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   &:last-of-type {
     margin-left: 0.5rem;
   }
-`,He=L.div`
+`,je=L.div`
   overflow: hidden;
   /* if slidesPerView isnt a whole number add the offset */
   padding-left: ${e=>!Number.isInteger(e.slidesPerView)&&`${e.offsetStart}rem`};
@@ -160,9 +160,9 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
       overflow: visible;
     }
   }
-`,M=({children:e,slidesPerView:t=1,slidesPerViewMob:r=1,spacing:o=0,offsetStart:a})=>{let[n,i]=Se({...Ie,slidesPerView:t,spacing:o,breakpoints:{"(max-width: 767px)":{slidesPerView:r}}}),d=()=>{i.prev()},l=()=>{i.next()};return x.createElement(Ne,{className:"keen-wrapper",offsetStart:a,slidesPerViewMob:r,"data-slidesperview":t,"data-slidesperviewmob":r,"data-offsetstart":a,"data-spacing":o},x.createElement(He,{offsetStart:a,slidesPerView:t,slidesPerViewMob:r},x.createElement("div",{ref:n,className:"keen-slider"},x.Children.map(e,s=>x.cloneElement(s,{className:"keen-slider__slide"},s.props.children)))),x.createElement(Pe,null,x.createElement(le,{className:"keen-prev",onClick:()=>d()},x.createElement(ze,{size:18})),x.createElement(le,{className:"keen-next",onClick:()=>l()},x.createElement(We,{size:18}))))};M.propTypes={slidesPerView:_.number,slidesPerViewMob:_.number,spacing:_.number,offsetStart:_.number};import Oe from"swr";import je from"axios";var de=e=>je.get(e).then(t=>t.data);var G=Ee.div`
+`,M=({children:e,slidesPerView:t=1,slidesPerViewMob:r=1,spacing:i=0,offsetStart:a})=>{let[n,o]=Se({...Ie,slidesPerView:t,spacing:i,breakpoints:{"(max-width: 767px)":{slidesPerView:r}}}),d=()=>{o.prev()},l=()=>{o.next()};return x.createElement(Ne,{className:"keen-wrapper",offsetStart:a,slidesPerViewMob:r,"data-slidesperview":t,"data-slidesperviewmob":r,"data-offsetstart":a,"data-spacing":i},x.createElement(je,{offsetStart:a,slidesPerView:t,slidesPerViewMob:r},x.createElement("div",{ref:n,className:"keen-slider"},x.Children.map(e,s=>x.cloneElement(s,{className:"keen-slider__slide"},s.props.children)))),x.createElement(Pe,null,x.createElement(le,{className:"keen-prev",onClick:()=>d()},x.createElement(ze,{size:18})),x.createElement(le,{className:"keen-next",onClick:()=>l()},x.createElement(We,{size:18}))))};M.propTypes={slidesPerView:_.number,slidesPerViewMob:_.number,spacing:_.number,offsetStart:_.number};import Oe from"swr";import Ee from"axios";var de=e=>Ee.get(e).then(t=>t.data);var G=He.div`
   width: 100%;
-`,Ve=e=>{let{isCarousel:t,children:r,slidesPerView:o,slidesPerViewMob:a,spacing:n,offsetStart:i}=e;return t?W.createElement(M,{slidesPerView:o,spacing:n,slidesPerViewMob:a,offsetStart:i},r):r},pe=e=>{let{postIds:t}=e,r=t.join(","),{data:o,error:a}=Oe(`https://www.missguided.co.uk/babezine/wp-json/wp/v2/posts?include=${r}&_fields=link,title,excerpt,_links,_embedded&_embed`,de);return a?W.createElement("div",null,"failed to load"):o?W.createElement(G,null,W.createElement(Ve,{...e},o.map((n,i)=>W.createElement(F,{key:i,data:n})))):W.createElement("div",null,"loading...")};pe.propTypes={postIds:I.array.isRequired,isCarousel:I.bool,slidesPerView:I.number,slidesPerViewMob:I.number,spacing:I.number,offsetStart:I.number};import Q from"react";import b from"prop-types";import Z from"styled-components";var qe={sm:{fontSize:"sm",padding:"0.5rem 0.75rem",iconSize:"14"},md:{fontSize:"base",padding:"0.75rem 1rem",iconSize:"16"},lg:{fontSize:"md",padding:"1rem 1.25rem",iconSize:"18"}},Fe={primary:{background:"var(--primary-black)",color:"var(--primary-white)",backgroundHover:"var(--primary-black-hover)",colorHover:"var(--primary-white-hover)"},secondary:{background:"var(--primary-white)",color:"var(--primary-black)",backgroundHover:"var(--primary-white-hover)",colorHover:"var(--primary-black-hover)",borderColor:"var(--primary-black)"}},me=Z.a`
+`,Ve=e=>{let{isCarousel:t,children:r,slidesPerView:i,slidesPerViewMob:a,spacing:n,offsetStart:o}=e;return t?W.createElement(M,{slidesPerView:i,spacing:n,slidesPerViewMob:a,offsetStart:o},r):r},pe=e=>{let{postIds:t}=e,r=t.join(","),{data:i,error:a}=Oe(`https://www.missguided.co.uk/babezine/wp-json/wp/v2/posts?include=${r}&_fields=link,title,excerpt,_links,_embedded&_embed`,de);return a?W.createElement("div",null,"failed to load"):i?W.createElement(G,null,W.createElement(Ve,{...e},i.map((n,o)=>W.createElement(F,{key:o,data:n})))):W.createElement("div",null,"loading...")};pe.propTypes={postIds:I.array.isRequired,isCarousel:I.bool,slidesPerView:I.number,slidesPerViewMob:I.number,spacing:I.number,offsetStart:I.number};import Q from"react";import b from"prop-types";import Z from"styled-components";var qe={sm:{fontSize:"sm",padding:"0.5rem 0.75rem",iconSize:"14"},md:{fontSize:"base",padding:"0.75rem 1rem",iconSize:"16"},lg:{fontSize:"md",padding:"1rem 1.25rem",iconSize:"18"}},Fe={primary:{background:"var(--primary-black)",color:"var(--primary-white)",hover:"var(--primary-black-hover)"},secondary:{background:"var(--primary-white)",color:"var(--primary-black)",hover:"var(--primary-white-hover)",borderColor:"var(--primary-black)"}},me=Z.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,8 +191,8 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   border-color: ${e=>e.type.borderColor};
 
   &:hover {
-    color: ${e=>e.type.colorHover};
-    background: ${e=>e.type.backgroundHover};
+    color: ${e=>e.type.color};
+    background: ${e=>e.type.hover};
   }
 `,Le=Z(me)`
   background: none;
@@ -200,10 +200,10 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   border-color: ${e=>e.type.background};
 
   &:hover {
-    color: ${e=>e.type.backgroundHover};
-    border-color: ${e=>e.type.backgroundHover};
+    color: ${e=>e.type.hover};
+    border-color: ${e=>e.type.hover};
   }
-`,O=({text:e,link:t,type:r="primary",variant:o,className:a,onClick:n,icon:i,isFullWidth:d,size:l="md"})=>{let s,m=i,{padding:f,fontSize:y,iconSize:w}=qe[l],H=Fe[r];if(o==="fill")s=_e;else if(o==="outline")s=Le;else throw new Error(`Unrecognized Button variant: ${o}`);return Q.createElement(s,{href:t,as:t?"a":"button",className:a,onClick:n,icon:i,text:e,isFullWidth:d,padding:f,type:H},i&&Q.createElement(m,{size:w}),Q.createElement(g,{size:y,heading:!0},e))};O.defaultProps={size:"md",variant:"fill",onClick:void 0};O.propTypes={link:b.string,text:b.string,variant:b.oneOf(["outline","fill"]),type:b.string,className:b.string,onClick:b.func,icon:b.elementType,isFullWidth:b.bool,size:b.oneOf(["sm","md","lg"])};import k from"prop-types";import ge from"react";import Ue,{css as ue}from"styled-components";import Me from"styled-components";import ce from"prop-types";var C=Me.section`
+`,O=({text:e,link:t,type:r="primary",variant:i,className:a,onClick:n,icon:o,isFullWidth:d,size:l="md"})=>{let s,m=o,{padding:u,fontSize:y,iconSize:w}=qe[l],j=Fe[r];if(i==="fill")s=_e;else if(i==="outline")s=Le;else throw new Error(`Unrecognized Button variant: ${i}`);return Q.createElement(s,{href:t,as:t?"a":"button",className:a,onClick:n,icon:o,text:e,isFullWidth:d,padding:u,type:j},o&&Q.createElement(m,{size:w}),Q.createElement(g,{size:y,heading:!0},e))};O.defaultProps={size:"md",variant:"fill",onClick:void 0};O.propTypes={link:b.string,text:b.string,variant:b.oneOf(["outline","fill"]),type:b.string,className:b.string,onClick:b.func,icon:b.elementType,isFullWidth:b.bool,size:b.oneOf(["sm","md","lg"])};import k from"prop-types";import ge from"react";import Ue,{css as fe}from"styled-components";import Me from"styled-components";import ce from"prop-types";var C=Me.section`
   --width-sm: 640px;
   --width-md: 768px;
   --width-lg: 1024px;
@@ -233,13 +233,13 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   width: calc(100% + calc(var(--flex-gap) * 1rem));
 
   /* if flex item is a string  */
-  ${e=>typeof e.itemFlex=="string"&&ue`
+  ${e=>typeof e.itemFlex=="string"&&fe`
       > * {
         flex: ${t=>t.itemFlex}};
       }
     `}
 
-  ${e=>Array.isArray(e.itemFlex)&&ue`
+  ${e=>Array.isArray(e.itemFlex)&&fe`
       ${e.itemFlex.map((t,r)=>`
         > :nth-child(${r+1}) {
           flex: ${t};
@@ -251,7 +251,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
     /* use this to emulate the gap property */
     margin: calc(var(--flex-gap) * 1rem) 0 0 calc(var(--flex-gap) * 1rem);
   }
-`,J=e=>{let{children:t,gap:r,direction:o,align:a,justify:n,maxWidth:i,itemFlex:d,padding:l}=e;return ge.createElement(C,{maxWidth:i,padding:l},ge.createElement(De,{gap:r,align:a,justify:n,direction:o,style:{"--flex-gap":e.gap},itemFlex:d},t))};J.propTypes={gap:k.number,align:k.string,justify:k.string,direction:k.string,itemFlex:k.oneOfType([k.string,k.array]),padding:k.bool,maxWidth:k.oneOf(["none","sm","md","lg","xl","2xl"])};J.defaultProps={gap:1,direction:"row"};import Ye from"react";import U from"prop-types";import Ke from"styled-components";var Ge=Ke(C)`
+`,J=e=>{let{children:t,gap:r,direction:i,align:a,justify:n,maxWidth:o,itemFlex:d,padding:l}=e;return ge.createElement(C,{maxWidth:o,padding:l},ge.createElement(De,{gap:r,align:a,justify:n,direction:i,style:{"--flex-gap":e.gap},itemFlex:d},t))};J.propTypes={gap:k.number,align:k.string,justify:k.string,direction:k.string,itemFlex:k.oneOfType([k.string,k.array]),padding:k.bool,maxWidth:k.oneOf(["none","sm","md","lg","xl","2xl"])};J.defaultProps={gap:1,direction:"row"};import Ye from"react";import U from"prop-types";import Ke from"styled-components";var Ge=Ke(C)`
   display: grid;
   grid-gap: ${e=>`${e.gap}rem`};
   grid-template-columns: repeat(
@@ -293,13 +293,13 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
     background-color: ${e=>e.backgroundColor};
     padding-top: ${e=>`${e.height/e.width*100}%`};
 
-    ${e=>e.isArtDirected&&e.artDirectedImages.map(({media:t,height:r,width:o})=>`
+    ${e=>e.isArtDirected&&e.artDirectedImages.map(({media:t,height:r,width:i})=>`
         @media ${t} {
-          padding-top: ${r/o*100}%;
+          padding-top: ${r/i*100}%;
         }
       `).join("")}
   }
-`,S=e=>{let{width:t,alt:r,src:o,quality:a,sizes:n,height:i,backgroundColor:d,className:l}=e,s=Ze(null);Qe(()=>{let c=z=>{z.forEach(q=>{if(q.isIntersecting){let E=Array.from(s.current.querySelectorAll("source"));s.current.lastChild.classList.add("loaded"),E.forEach(re=>{re.srcset=re.dataset.srcset})}})},h={threshold:0,root:null,rootMargin:"-50px 0px 0px 0px"},v=new IntersectionObserver(c,h);return v.observe(s.current.querySelector("img")),()=>v.disconnect()},[s]);let m=[.25,.5,1,1.25,1.5,2,2.5],f=["webp","jpeg"],y=({type:c,width:h,src:v})=>{let z=m.flatMap(q=>{let E=h*q;return E<1920?`${v}.${c}?w=${E}&qlt=${a} ${E}w`:[]});return w||z.push(`${v}.${c}?w=1920&qlt=${a} 1920w`),z.join(",")},w=Array.isArray(o),H=w?o[0]:o,j;return w&&([,...j]=o),N.createElement(Xe,{width:t,height:i,backgroundColor:d,isArtDirected:w,artDirectedImages:j,className:l},N.createElement("div",null),N.createElement("picture",{ref:s},w&&j.map(c=>f.map((h,v)=>N.createElement("source",{key:v,type:`image/${h}`,"data-srcset":y({type:h,...c,isArtDirected:!0}),sizes:n,media:c.media}))),f.map((c,h)=>N.createElement("source",{key:h,type:`image/${c}`,"data-srcset":y({type:c,width:t,src:H,isArtDirected:!1}),sizes:n})),N.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:r,loading:"lazy"})))};S.propTypes={width:A.number,alt:A.string.isRequired,src:A.oneOfType([A.string,A.array]).isRequired,quality:A.number,sizes:A.string,height:A.number,backgroundColor:A.string};S.defaultProps={backgroundColor:"#ECECF2",quality:80};import fe from"react";import Re,{css as he}from"styled-components";import u from"prop-types";var et=Re.div`
+`,S=e=>{let{width:t,alt:r,src:i,quality:a,sizes:n,height:o,backgroundColor:d,className:l}=e,s=Ze(null);Qe(()=>{let c=z=>{z.forEach(q=>{if(q.isIntersecting){let H=Array.from(s.current.querySelectorAll("source"));s.current.lastChild.classList.add("loaded"),H.forEach(re=>{re.srcset=re.dataset.srcset})}})},h={threshold:0,root:null,rootMargin:"-50px 0px 0px 0px"},v=new IntersectionObserver(c,h);return v.observe(s.current.querySelector("img")),()=>v.disconnect()},[s]);let m=[.25,.5,1,1.25,1.5,2,2.5],u=["webp","jpeg"],y=({type:c,width:h,src:v})=>{let z=m.flatMap(q=>{let H=h*q;return H<1920?`${v}.${c}?w=${H}&qlt=${a} ${H}w`:[]});return w||z.push(`${v}.${c}?w=1920&qlt=${a} 1920w`),z.join(",")},w=Array.isArray(i),j=w?i[0]:i,E;return w&&([,...E]=i),N.createElement(Xe,{width:t,height:o,backgroundColor:d,isArtDirected:w,artDirectedImages:E,className:l},N.createElement("div",null),N.createElement("picture",{ref:s},w&&E.map(c=>u.map((h,v)=>N.createElement("source",{key:v,type:`image/${h}`,"data-srcset":y({type:h,...c,isArtDirected:!0}),sizes:n,media:c.media}))),u.map((c,h)=>N.createElement("source",{key:h,type:`image/${c}`,"data-srcset":y({type:c,width:t,src:j,isArtDirected:!1}),sizes:n})),N.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:r,loading:"lazy"})))};S.propTypes={width:A.number,alt:A.string.isRequired,src:A.oneOfType([A.string,A.array]).isRequired,quality:A.number,sizes:A.string,height:A.number,backgroundColor:A.string};S.defaultProps={backgroundColor:"#ECECF2",quality:80};import ue from"react";import Re,{css as he}from"styled-components";import f from"prop-types";var et=Re.div`
   display: flex;
   flex-direction: ${e=>e.direction};
   justify-content: ${e=>e.justify};
@@ -329,7 +329,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
         }
       }
     `}
-`,V=e=>{let{as:t,direction:r,gap:o,align:a,justify:n,className:i,children:d,maxWidth:l,style:s,padding:m}=e;return fe.createElement(C,{maxWidth:l,padding:m},fe.createElement(et,{className:i,as:t,align:a,justify:n,direction:r,style:{...s,"--stack-gap":o}},d))};V.propTypes={as:u.string,className:u.string,style:u.string,gap:u.number,align:u.string,justify:u.string,direction:u.string,itemFlex:u.oneOfType([u.string,u.array]),padding:u.bool,maxWidth:u.oneOf(["none","sm","md","lg","xl","2xl"])};V.defaultProps={as:"div",direction:"column",gap:1.5,align:"stretch",justify:"flex-start"};var tt=D(g)`
+`,V=e=>{let{as:t,direction:r,gap:i,align:a,justify:n,className:o,children:d,maxWidth:l,style:s,padding:m}=e;return ue.createElement(C,{maxWidth:l,padding:m},ue.createElement(et,{className:o,as:t,align:a,justify:n,direction:r,style:{...s,"--stack-gap":i}},d))};V.propTypes={as:f.string,className:f.string,style:f.string,gap:f.number,align:f.string,justify:f.string,direction:f.string,itemFlex:f.oneOfType([f.string,f.array]),padding:f.bool,maxWidth:f.oneOf(["none","sm","md","lg","xl","2xl"])};V.defaultProps={as:"div",direction:"column",gap:1.5,align:"stretch",justify:"flex-start"};var tt=D(g)`
   --max-width: calc(400 / 16 * 1rem);
   border-radius: var(--border-radius);
   background: var(--background);
@@ -354,7 +354,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   @media (max-width: 1024px) {
     --padding: 0.75rem;
   }
-`,ot=D(V)`
+`,it=D(V)`
   --content-padding: 2rem;
   position: absolute;
   z-index: 50;
@@ -373,7 +373,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   @media (max-width: 767px) {
     --content-padding: ${e=>e.noContentBackground?"1.5rem":"0.75rem"};
   }
-`,it=D.img`
+`,ot=D.img`
   padding: var(--padding);
   background: var(--background);
   display: block;
@@ -383,7 +383,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
   height: 100%;
   object-fit: contain;
   object-position: left;
-`,R=e=>{let{className:t,buttonText:r="shop now",buttonType:o,buttonVariant:a="fill",link:n,logo:i,subcopy:d,noContentBackground:l,noLogoBackground:s,contentBackground:m,contentColor:f,width:y,height:w,sizes:H,alt:j,src:c}=e,h={width:y,height:w,sizes:H,src:c,alt:j},v={"--padding":0,"--background":"none","--color":f||"var(--primary-black)"},z={"--background":"none","--padding":"none"};return P.createElement(rt,{href:n,style:l?{...v}:{...{"--background":m||"var(--primary-black)","--color":f||"var(--primary-white)"}},className:t,contentColor:f,contentBackground:m},P.createElement(S,{...h}),P.createElement(ot,{gap:l?1.5:.5,noContentBackground:l},P.createElement(it,{src:i,alt:"logo",style:s?{...z}:{}}),P.createElement(tt,null,d),P.createElement(O,{text:r,variant:a,type:o})))};R.propTypes={className:p.string,buttonText:p.string,buttonVariant:p.string,buttonType:p.string,link:p.string.isRequired,logo:p.string,subcopy:p.string,contentBackground:p.string,contentColor:p.string,alt:p.string.isRequired,src:p.array.isRequired,width:p.number,height:p.number,sizes:p.string,noLogoBackground:p.bool,noContentBackground:p.bool};R.defaultProps={width:1440,height:640,sizes:"100vw"};import we from"react";import ee from"prop-types";import st,{css as $}from"styled-components";import Y from"react";import xe from"styled-components";import ye from"prop-types";var at=xe.div`
+`,R=e=>{let{className:t,buttonText:r="shop now",buttonType:i,buttonVariant:a="fill",link:n,logo:o,subcopy:d,noContentBackground:l,noLogoBackground:s,contentBackground:m,contentColor:u,width:y,height:w,sizes:j,alt:E,src:c}=e,h={width:y,height:w,sizes:j,src:c,alt:E},v={"--padding":0,"--background":"none","--color":u||"var(--primary-black)"},z={"--background":"none","--padding":"none"};return P.createElement(rt,{href:n,style:l?{...v}:{...{"--background":m||"var(--primary-black)","--color":u||"var(--primary-white)"}},className:t,contentColor:u,contentBackground:m},P.createElement(S,{...h}),P.createElement(it,{gap:l?1.5:.5,noContentBackground:l},P.createElement(ot,{src:o,alt:"logo",style:s?{...z}:{}}),P.createElement(tt,null,d),P.createElement(O,{text:r,variant:a,type:i})))};R.propTypes={className:p.string,buttonText:p.string,buttonVariant:p.string,buttonType:p.string,link:p.string.isRequired,logo:p.string,subcopy:p.string,contentBackground:p.string,contentColor:p.string,alt:p.string.isRequired,src:p.array.isRequired,width:p.number,height:p.number,sizes:p.string,noLogoBackground:p.bool,noContentBackground:p.bool};R.defaultProps={width:1440,height:640,sizes:"100vw"};import we from"react";import ee from"prop-types";import st,{css as $}from"styled-components";import Y from"react";import xe from"styled-components";import ye from"prop-types";var at=xe.div`
   width: 100%;
 
   a {
@@ -402,7 +402,7 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
     bottom: 0.75rem;
     left: 0.75rem;
   }
-`,K=e=>{let{text:t,link:r,className:o,...a}=e;return Y.createElement(at,{className:o},Y.createElement("a",{href:r},Y.createElement(S,{...a}),t&&Y.createElement(nt,{heading:!0},t)))};K.propTypes={link:ye.string,text:ye.string};var lt=st.div`
+`,K=e=>{let{text:t,link:r,className:i,...a}=e;return Y.createElement(at,{className:i},Y.createElement("a",{href:r},Y.createElement(S,{...a}),t&&Y.createElement(nt,{heading:!0},t)))};K.propTypes={link:ye.string,text:ye.string};var lt=st.div`
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -533,4 +533,4 @@ import B,{useRef as Ae,useEffect as $e}from"react";import ae from"prop-types";va
         }
       `};
   }
-`,dt={contrast:[{width:432,height:510,sizes:"(max-width: 600px) 100vw, 30vw"},{width:720,height:800,sizes:"(max-width: 600px) 100vw, 50vw"}],sidebyside:[{width:680,height:800,sizes:"(max-width: 600px) 50vw, 40vw"},{width:680,height:800,sizes:"(max-width: 600px) 50vw, 40vw"}],overlap:[{width:680,height:850,sizes:"(max-width: 600px) 50vw, 40vw"},{width:680,height:850,sizes:"(max-width: 600px) 50vw, 40vw"}]},te=({layout:e,reverse:t,images:r})=>we.createElement(lt,{layout:e,reverse:t},r.map((o,a)=>{let n=dt[e][a],i={...o,...n};return we.createElement(K,{...i})}));te.defaultProps={layout:"sidebyside"};te.propTypes={layout:ee.oneOf(["contrast","sidebyside","overlap"]),reverse:ee.bool,images:ee.array};export{F as Blogpost,pe as Blogposts,O as Button,M as Carousel,J as Flex,X as Grid,R as HeroBanner,S as Image,te as ImageRow,C as Row,K as ShoppableImage,V as Stack,g as Text};
+`,dt={contrast:[{width:432,height:510,sizes:"(max-width: 600px) 100vw, 30vw"},{width:720,height:800,sizes:"(max-width: 600px) 100vw, 50vw"}],sidebyside:[{width:680,height:800,sizes:"(max-width: 600px) 50vw, 40vw"},{width:680,height:800,sizes:"(max-width: 600px) 50vw, 40vw"}],overlap:[{width:680,height:850,sizes:"(max-width: 600px) 50vw, 40vw"},{width:680,height:850,sizes:"(max-width: 600px) 50vw, 40vw"}]},te=({layout:e,reverse:t,images:r})=>we.createElement(lt,{layout:e,reverse:t},r.map((i,a)=>{let n=dt[e][a],o={...i,...n};return we.createElement(K,{...o})}));te.defaultProps={layout:"sidebyside"};te.propTypes={layout:ee.oneOf(["contrast","sidebyside","overlap"]),reverse:ee.bool,images:ee.array};export{F as Blogpost,pe as Blogposts,O as Button,M as Carousel,J as Flex,X as Grid,R as HeroBanner,S as Image,te as ImageRow,C as Row,K as ShoppableImage,V as Stack,g as Text};

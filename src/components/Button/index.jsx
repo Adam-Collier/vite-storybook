@@ -25,14 +25,12 @@ const BUTTON_TYPE = {
   primary: {
     background: 'var(--primary-black)',
     color: 'var(--primary-white)',
-    backgroundHover: 'var(--primary-black-hover)',
-    colorHover: 'var(--primary-white-hover)',
+    hover: 'var(--primary-black-hover)',
   },
   secondary: {
     background: 'var(--primary-white)',
     color: 'var(--primary-black)',
-    backgroundHover: 'var(--primary-white-hover)',
-    colorHover: 'var(--primary-black-hover)',
+    hover: 'var(--primary-white-hover)',
     borderColor: 'var(--primary-black)',
   },
 };
@@ -68,8 +66,8 @@ const FillButton = styled(ButtonBase)`
   border-color: ${(props) => props.type.borderColor};
 
   &:hover {
-    color: ${(props) => props.type.colorHover};
-    background: ${(props) => props.type.backgroundHover};
+    color: ${(props) => props.type.color};
+    background: ${(props) => props.type.hover};
   }
 `;
 
@@ -79,8 +77,8 @@ const OutlineButton = styled(ButtonBase)`
   border-color: ${(props) => props.type.background};
 
   &:hover {
-    color: ${(props) => props.type.backgroundHover};
-    border-color: ${(props) => props.type.backgroundHover};
+    color: ${(props) => props.type.hover};
+    border-color: ${(props) => props.type.hover};
   }
 `;
 
