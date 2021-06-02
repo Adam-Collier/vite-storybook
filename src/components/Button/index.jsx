@@ -52,6 +52,10 @@ const ButtonBase = styled.a`
   cursor: pointer;
   text-decoration: none;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   svg {
     display: block;
     margin-right: ${(props) => props.text && props.icon && '0.35rem'};
@@ -64,6 +68,7 @@ const FillButton = styled(ButtonBase)`
   border-color: ${(props) => props.type.borderColor};
 
   &:hover {
+    color: ${(props) => props.type.colorHover};
     background: ${(props) => props.type.backgroundHover};
   }
 `;
