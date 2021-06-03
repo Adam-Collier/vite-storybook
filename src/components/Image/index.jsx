@@ -57,6 +57,7 @@ export const Image = (props) => {
     height,
     backgroundColor,
     className,
+    imageTypes = ['webp', 'jpeg'],
   } = props;
 
   const pictureEl = useRef(null);
@@ -89,7 +90,6 @@ export const Image = (props) => {
   }, [pictureEl]);
 
   let imageSizes = [0.25, 0.5, 1, 1.25, 1.5, 2, 2.5];
-  let imageTypes = ['webp', 'jpeg'];
 
   let createSrcSet = ({ type, width, src }) => {
     let sizes = imageSizes.flatMap((size) => {

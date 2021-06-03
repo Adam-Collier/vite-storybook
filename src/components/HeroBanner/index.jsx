@@ -61,8 +61,17 @@ const Logo = styled.img`
   padding: var(--padding);
   background: var(--background);
   display: block;
-  max-width: clamp(min(240px, 70%), 30vw, 380px);
-  max-height: clamp(100px, 10vw, 140px);
+  /* fallback for older browsers */
+  max-width: 380px;
+  max-height: 140px;
+  @media (max-width: 767px) {
+    max-width: 240px;
+    max-height: 140px;
+  }
+  @supports (max-width: clamp(min(240px, 70%), 30vw, 380px)) {
+    max-width: clamp(min(240px, 70%), 30vw, 380px);
+    max-height: clamp(100px, 10vw, 140px);
+  }
   width: 100%;
   height: 100%;
   object-fit: contain;

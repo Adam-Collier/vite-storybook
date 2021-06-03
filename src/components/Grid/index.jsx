@@ -6,6 +6,12 @@ import styled from 'styled-components';
 const Wrapper = styled(Row)`
   display: grid;
   grid-gap: ${(props) => `${props.gap}rem`};
+  /* add a fallback here for older browsers */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(${(props) => props.wrapWidth}px, 1fr)
+  );
+
   grid-template-columns: repeat(
     auto-fill,
     minmax(min(${(props) => props.wrapWidth}px, 40%), 1fr)
