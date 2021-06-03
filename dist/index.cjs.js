@@ -1,4 +1,4 @@
-var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescriptor;var Ee=Object.getOwnPropertyNames;var He=Object.getPrototypeOf,Oe=Object.prototype.hasOwnProperty;var ye=e=>X(e,"__esModule",{value:!0});var Ve=(e,t)=>{for(var r in t)X(e,r,{get:t[r],enumerable:!0})},qe=(e,t,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let o of Ee(t))!Oe.call(e,o)&&o!=="default"&&X(e,o,{get:()=>t[o],enumerable:!(r=je(t,o))||r.enumerable});return e},i=e=>qe(ye(X(e!=null?Pe(He(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);ye(exports);Ve(exports,{Blogpost:()=>L,Blogposts:()=>pe,Button:()=>H,Carousel:()=>U,Flex:()=>re,Grid:()=>ie,HeroBanner:()=>oe,Image:()=>W,ImageRow:()=>ne,Row:()=>z,ShoppableImage:()=>Z,Stack:()=>O,Text:()=>c});var h=i(require("react")),se=i(require("prop-types"));var we=e=>{var t=document.createElement("textarea");t.innerHTML=e;let r=t.value;return t.remove(),r};var le=i(require("styled-components"));var ve=i(require("react")),S=i(require("prop-types")),_=i(require("styled-components")),Fe=_.default.p`
+var Ne=Object.create,X=Object.defineProperty;var Pe=Object.getOwnPropertyDescriptor;var je=Object.getOwnPropertyNames;var Ee=Object.getPrototypeOf,He=Object.prototype.hasOwnProperty;var xe=e=>X(e,"__esModule",{value:!0});var Oe=(e,t)=>{for(var r in t)X(e,r,{get:t[r],enumerable:!0})},Ve=(e,t,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let o of je(t))!He.call(e,o)&&o!=="default"&&X(e,o,{get:()=>t[o],enumerable:!(r=Pe(t,o))||r.enumerable});return e},i=e=>Ve(xe(X(e!=null?Ne(Ee(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);xe(exports);Oe(exports,{Blogpost:()=>L,Blogposts:()=>de,Button:()=>H,Carousel:()=>U,Flex:()=>re,Grid:()=>ie,HeroBanner:()=>oe,Image:()=>I,ImageRow:()=>ne,Row:()=>z,ShoppableImage:()=>Z,Stack:()=>O,Text:()=>g});var u=i(require("react")),se=i(require("prop-types"));var ye=e=>{var t=document.createElement("textarea");t.innerHTML=e;let r=t.value;return t.remove(),r};var le=i(require("styled-components"));var we=i(require("react")),B=i(require("prop-types")),_=i(require("styled-components")),qe=_.default.p`
   --text-5xl: calc(64 / 16 * 1rem);
   --text-4xl: calc(48 / 16 * 1rem);
   --text-3xl: calc(36 / 16 * 1rem);
@@ -32,7 +32,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
       -webkit-box-orient: vertical;
       overflow: hidden;
     `}
-`,c=e=>{let{element:t,children:r,size:o,align:n,heading:s,className:a,lineHeight:p,weight:d,spacing:l,truncate:f}=e;return ve.default.createElement(Fe,{as:t,style:{fontSize:`var(--text-${o})`,textAlign:n},heading:s,className:a,lineHeight:p,weight:d,spacing:l,truncate:f},r)};c.propTypes={heading:S.default.bool,align:S.default.oneOf(["left","center","right"]),size:S.default.oneOf(["5xl","4xl","3xl","2xl","xl","lg","md","base","sm","xs","xxs"]),element:S.default.string,weight:S.default.number,lineHeight:S.default.number,children:S.default.string,truncate:S.default.number};c.defaultProps={heading:!1,element:"p",size:"base",align:"left",weight:500,lineHeight:1.75};var _e=le.default.a`
+`,g=e=>{let{element:t,children:r,size:o,align:n,heading:s,className:a,lineHeight:d,weight:p,spacing:c,truncate:l}=e;return we.default.createElement(qe,{as:t,style:{fontSize:`var(--text-${o})`,textAlign:n},heading:s,className:a,lineHeight:d,weight:p,spacing:c,truncate:l},r)};g.propTypes={heading:B.default.bool,align:B.default.oneOf(["left","center","right"]),size:B.default.oneOf(["5xl","4xl","3xl","2xl","xl","lg","md","base","sm","xs","xxs"]),element:B.default.string,weight:B.default.number,lineHeight:B.default.number,children:B.default.string,truncate:B.default.number};g.defaultProps={heading:!1,element:"p",size:"base",align:"left",weight:500,lineHeight:1.75};var Fe=le.default.a`
   width: 100%;
   text-decoration: none;
   color: inherit;
@@ -42,7 +42,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   &:hover {
     text-decoration: none;
   }
-`,Le=le.default.div`
+`,_e=le.default.div`
   position: relative;
   display: block;
   padding-top: 100%;
@@ -63,7 +63,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   .loaded {
     opacity: 1;
   }
-`,be=e=>{let t=e.replace(/(<([^>]+)>)/gi,"");return we(t)},L=({data:e,className:t})=>{let r=(0,h.useRef)(null);(0,h.useEffect)(()=>{let a=l=>{l.forEach(f=>{if(f.isIntersecting){let v=Array.from(r.current.querySelectorAll("source"));r.current.lastChild.classList.add("loaded"),v.forEach(T=>{T.srcset=T.dataset.srcset})}})},p={threshold:0,root:null},d=new IntersectionObserver(a,p);return d.observe(r.current.querySelector("img")),()=>d.disconnect()},[r]);let o=e._embedded["wp:featuredmedia"][0].media_details.sizes,s=Object.values(o).sort((a,p)=>a.width-p.width).map(a=>`${a.source_url} ${a.width}w`).join(",");return h.default.createElement(_e,{className:t,href:e.link},h.default.createElement(Le,null,h.default.createElement("picture",{ref:r},h.default.createElement("source",{"data-srcset":s,sizes:"(max-width: 767px) 240px, 300px"}),h.default.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:e.title.rendered,loading:"lazy"}))),h.default.createElement(c,{as:"h3",lineHeight:1.5,weight:600,spacing:"0.25rem"},be(e.title.rendered)),h.default.createElement(c,{size:"sm",lineHeight:1.5,weight:400},be(e.excerpt.rendered)))};L.propTypes={data:se.default.object.isRequired,className:se.default.string};var N=i(require("react")),P=i(require("prop-types")),Ce=i(require("styled-components"));var y=i(require("react")),M=i(require("prop-types")),I=i(require("styled-components")),ke=i(require("keen-slider/react")),R=i(require("react-feather"));var Me={loop:!0,duration:300},Ue=I.default.div`
+`,be=e=>{let t=e.replace(/(<([^>]+)>)/gi,"");return ye(t)},L=({data:e,className:t})=>{let r=(0,u.useRef)(null);(0,u.useEffect)(()=>{let a=c=>{c.forEach(l=>{if(l.isIntersecting){let $=Array.from(r.current.querySelectorAll("source"));r.current.lastChild.classList.add("loaded"),$.forEach(T=>{T.srcset=T.dataset.srcset})}})},d={threshold:0,root:null},p=new IntersectionObserver(a,d);return p.observe(r.current.querySelector("img")),()=>p.disconnect()},[r]);let o=e._embedded["wp:featuredmedia"][0].media_details.sizes,s=Object.values(o).sort((a,d)=>a.width-d.width).map(a=>`${a.source_url} ${a.width}w`).join(",");return u.default.createElement(Fe,{className:t,href:e.link},u.default.createElement(_e,null,u.default.createElement("picture",{ref:r},u.default.createElement("source",{"data-srcset":s,sizes:"(max-width: 767px) 240px, 300px"}),u.default.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:e.title.rendered,loading:"lazy"}))),u.default.createElement(g,{as:"h3",lineHeight:1.5,weight:600,spacing:"0.25rem"},be(e.title.rendered)),u.default.createElement(g,{size:"sm",lineHeight:1.5,weight:400},be(e.excerpt.rendered)))};L.propTypes={data:se.default.object.isRequired,className:se.default.string};var N=i(require("react")),P=i(require("prop-types")),Te=i(require("styled-components"));var y=i(require("react")),M=i(require("prop-types")),W=i(require("styled-components")),ve=i(require("keen-slider/react")),R=i(require("react-feather")),Le={loop:!0,duration:300},Me=W.default.div`
   display: block;
   width: 100%;
   position: relative;
@@ -99,7 +99,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
 
   @media (max-width: 767px) {
     /* if there is an offset being applied make the carousel full width */
-    ${e=>!Number.isInteger(e.slidesPerViewMob)&&I.css`
+    ${e=>!Number.isInteger(e.slidesPerViewMob)&&W.css`
         width: 100vw;
         left: 50%;
         right: 50%;
@@ -107,20 +107,13 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
         margin-right: -50vw;
       `}
   }
-`,De=I.default.div`
+`,Ue=W.default.div`
   --nav-inset: 2rem;
   position: absolute;
-  bottom: var(--nav-inset);
-  right: var(--nav-inset);
 
-  /* if the carousel exists within the Blogposts component move the navigation arrows */
-  @media (min-width: 1024px) {
-    ${de} & {
-      --nav-inset: 2rem;
-      bottom: auto;
-      top: var(--nav-inset);
-    }
-  }
+  ${e=>e.position.map(t=>W.css`
+        ${t}: var(--nav-inset);
+      `)}
 
   @media (max-width: 1024px) {
     --nav-inset: 0.75rem;
@@ -130,7 +123,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
     bottom: auto;
     top: var(--nav-inset);
   }
-`,Ae=I.default.button`
+`,ke=W.default.button`
   background: var(--primary-black);
   border: none;
   color: var(--primary-white);
@@ -146,7 +139,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   &:last-of-type {
     margin-left: 0.5rem;
   }
-`,Ye=I.default.div`
+`,De=W.default.div`
   overflow: hidden;
   /* if slidesPerView isnt a whole number add the offset */
   padding-left: ${e=>!Number.isInteger(e.slidesPerView)&&`${e.offsetStart}rem`};
@@ -160,9 +153,9 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
       overflow: visible;
     }
   }
-`,U=({children:e,slidesPerView:t=1,slidesPerViewMob:r=1,spacing:o=0,offsetStart:n})=>{let[s,a]=(0,ke.useKeenSlider)({...Me,slidesPerView:t,spacing:o,breakpoints:{"(max-width: 767px)":{slidesPerView:r}}}),p=()=>{a.prev()},d=()=>{a.next()};return y.default.createElement(Ue,{className:"keen-wrapper",offsetStart:n,slidesPerViewMob:r,"data-slidesperview":t,"data-slidesperviewmob":r,"data-offsetstart":n,"data-spacing":o},y.default.createElement(Ye,{offsetStart:n,slidesPerView:t,slidesPerViewMob:r},y.default.createElement("div",{ref:s,className:"keen-slider"},y.default.Children.map(e,l=>y.default.cloneElement(l,{className:"keen-slider__slide"},l.props.children)))),y.default.createElement(De,null,y.default.createElement(Ae,{className:"keen-prev",onClick:()=>p()},y.default.createElement(R.ArrowLeft,{size:18})),y.default.createElement(Ae,{className:"keen-next",onClick:()=>d()},y.default.createElement(R.ArrowRight,{size:18}))))};U.propTypes={slidesPerView:M.default.number,slidesPerViewMob:M.default.number,spacing:M.default.number,offsetStart:M.default.number};var Be=i(require("swr"));var $e=i(require("axios")),Te=e=>$e.default.get(e).then(t=>t.data);var de=Ce.default.div`
+`,U=({children:e,slidesPerView:t=1,slidesPerViewMob:r=1,spacing:o=0,offsetStart:n,arrowsPosition:s=["bottom","right"]})=>{let[a,d]=(0,ve.useKeenSlider)({...Le,slidesPerView:t,spacing:o,breakpoints:{"(max-width: 767px)":{slidesPerView:r}}}),p=()=>{d.prev()},c=()=>{d.next()};return y.default.createElement(Me,{className:"keen-wrapper",offsetStart:n,slidesPerViewMob:r,"data-slidesperview":t,"data-slidesperviewmob":r,"data-offsetstart":n,"data-spacing":o},y.default.createElement(De,{offsetStart:n,slidesPerView:t,slidesPerViewMob:r},y.default.createElement("div",{ref:a,className:"keen-slider"},y.default.Children.map(e,l=>y.default.cloneElement(l,{className:"keen-slider__slide"},l.props.children)))),y.default.createElement(Ue,{position:s},y.default.createElement(ke,{className:"keen-prev",onClick:()=>p()},y.default.createElement(R.ArrowLeft,{size:18})),y.default.createElement(ke,{className:"keen-next",onClick:()=>c()},y.default.createElement(R.ArrowRight,{size:18}))))};U.propTypes={slidesPerView:M.default.number,slidesPerViewMob:M.default.number,spacing:M.default.number,offsetStart:M.default.number};var Ce=i(require("swr"));var Ae=i(require("axios")),$e=e=>Ae.default.get(e).then(t=>t.data);var Ye=Te.default.div`
   width: 100%;
-`,Ke=e=>{let{isCarousel:t,children:r,slidesPerView:o,slidesPerViewMob:n,spacing:s,offsetStart:a}=e;return t?N.default.createElement(U,{slidesPerView:o,spacing:s,slidesPerViewMob:n,offsetStart:a},r):r},pe=e=>{let{postIds:t}=e,r=t.join(","),{data:o,error:n}=(0,Be.default)(`https://www.missguided.co.uk/babezine/wp-json/wp/v2/posts?include=${r}&_fields=link,title,excerpt,_links,_embedded&_embed`,Te);return n?N.default.createElement("div",null,"failed to load"):o?N.default.createElement(de,null,N.default.createElement(Ke,{...e},o.map((s,a)=>N.default.createElement(L,{key:a,data:s})))):N.default.createElement("div",null,"loading...")};pe.propTypes={postIds:P.default.array.isRequired,isCarousel:P.default.bool,slidesPerView:P.default.number,slidesPerViewMob:P.default.number,spacing:P.default.number,offsetStart:P.default.number};var ee=i(require("react")),k=i(require("prop-types"));var te=i(require("styled-components")),Ge={sm:{fontSize:"sm",padding:"0.5rem 0.75rem",iconSize:"14"},md:{fontSize:"base",padding:"0.75rem 1rem",iconSize:"16"},lg:{fontSize:"md",padding:"1rem 1.25rem",iconSize:"18"}},Qe={primary:{background:"var(--primary-black)",color:"var(--primary-white)",hover:"var(--primary-black-hover)"},secondary:{background:"var(--primary-white)",color:"var(--primary-black)",hover:"var(--primary-white-hover)",borderColor:"var(--primary-black)"}},Se=te.default.a`
+`,Ke=e=>{let{isCarousel:t,children:r,slidesPerView:o,slidesPerViewMob:n,spacing:s,offsetStart:a}=e;return t?N.default.createElement(U,{slidesPerView:o,spacing:s,slidesPerViewMob:n,offsetStart:a},r):r},de=e=>{let{postIds:t}=e,r=t.join(","),{data:o,error:n}=(0,Ce.default)(`https://www.missguided.co.uk/babezine/wp-json/wp/v2/posts?include=${r}&_fields=link,title,excerpt,_links,_embedded&_embed`,$e);return n?N.default.createElement("div",null,"failed to load"):o?N.default.createElement(Ye,null,N.default.createElement(Ke,{...e},o.map((s,a)=>N.default.createElement(L,{key:a,data:s})))):N.default.createElement("div",null,"loading...")};de.propTypes={postIds:P.default.array.isRequired,isCarousel:P.default.bool,slidesPerView:P.default.number,slidesPerViewMob:P.default.number,spacing:P.default.number,offsetStart:P.default.number};var ee=i(require("react")),v=i(require("prop-types"));var te=i(require("styled-components")),Ge={sm:{fontSize:"sm",padding:"0.5rem 0.75rem",iconSize:"14"},md:{fontSize:"base",padding:"0.75rem 1rem",iconSize:"16"},lg:{fontSize:"md",padding:"1rem 1.25rem",iconSize:"18"}},Qe={primary:{background:"var(--primary-black)",color:"var(--primary-white)",hover:"var(--primary-black-hover)"},secondary:{background:"var(--primary-white)",color:"var(--primary-black)",hover:"var(--primary-white-hover)",borderColor:"var(--primary-black)"}},Se=te.default.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +196,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
     color: ${e=>e.type.hover};
     border-color: ${e=>e.type.hover};
   }
-`,H=({text:e,link:t,type:r="primary",variant:o,className:n,onClick:s,icon:a,isFullWidth:p,size:d="md"})=>{let l,f=a,{padding:v,fontSize:T,iconSize:C}=Ge[d],V=Qe[r];if(o==="fill")l=Ze;else if(o==="outline")l=Je;else throw new Error(`Unrecognized Button variant: ${o}`);return ee.default.createElement(l,{href:t,as:t?"a":"button",className:n,onClick:s,icon:a,text:e,isFullWidth:p,padding:v,type:V},a&&ee.default.createElement(f,{size:C}),ee.default.createElement(c,{size:T,heading:!0},e))};H.defaultProps={size:"md",variant:"fill",onClick:void 0};H.propTypes={link:k.default.string,text:k.default.string,variant:k.default.oneOf(["outline","fill"]),type:k.default.string,className:k.default.string,onClick:k.default.func,icon:k.default.elementType,isFullWidth:k.default.bool,size:k.default.oneOf(["sm","md","lg"])};var A=i(require("prop-types")),ce=i(require("react")),D=i(require("styled-components"));var ze=i(require("styled-components")),me=i(require("prop-types")),z=ze.default.section`
+`,H=({text:e,link:t,type:r="primary",variant:o,className:n,onClick:s,icon:a,isFullWidth:d,size:p="md"})=>{let c,l=a,{padding:$,fontSize:T,iconSize:C}=Ge[p],V=Qe[r];if(o==="fill")c=Ze;else if(o==="outline")c=Je;else throw new Error(`Unrecognized Button variant: ${o}`);return ee.default.createElement(c,{href:t,as:t?"a":"button",className:n,onClick:s,icon:a,text:e,isFullWidth:d,padding:$,type:V},a&&ee.default.createElement(l,{size:C}),ee.default.createElement(g,{size:T,heading:!0},e))};H.defaultProps={size:"md",variant:"fill",onClick:void 0};H.propTypes={link:v.default.string,text:v.default.string,variant:v.default.oneOf(["outline","fill"]),type:v.default.string,className:v.default.string,onClick:v.default.func,icon:v.default.elementType,isFullWidth:v.default.bool,size:v.default.oneOf(["sm","md","lg"])};var k=i(require("prop-types")),me=i(require("react")),D=i(require("styled-components"));var Be=i(require("styled-components")),pe=i(require("prop-types")),z=Be.default.section`
   --width-sm: 640px;
   --width-md: 768px;
   --width-lg: 1024px;
@@ -218,7 +211,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   max-width: ${e=>e.maxWidth?`var(--width-${e.maxWidth})`:"none"};
 
   padding: ${e=>e.padding&&"0 1rem"};
-`;z.propTypes={maxWidth:me.default.oneOf(["none","sm","md","lg","xl","2xl"]),padding:me.default.bool};var Xe=D.default.div`
+`;z.propTypes={maxWidth:pe.default.oneOf(["none","sm","md","lg","xl","2xl"]),padding:pe.default.bool};var Xe=D.default.div`
   display: flex;
   width: 100%;
   position: relative;
@@ -251,9 +244,15 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
     /* use this to emulate the gap property */
     margin: calc(var(--flex-gap) * 1rem) 0 0 calc(var(--flex-gap) * 1rem);
   }
-`,re=e=>{let{children:t,gap:r,direction:o,align:n,justify:s,maxWidth:a,itemFlex:p,padding:d}=e;return ce.default.createElement(z,{maxWidth:a,padding:d},ce.default.createElement(Xe,{gap:r,align:n,justify:s,direction:o,style:{"--flex-gap":e.gap},itemFlex:p},t))};re.propTypes={gap:A.default.number,align:A.default.string,justify:A.default.string,direction:A.default.string,itemFlex:A.default.oneOfType([A.default.string,A.default.array]),padding:A.default.bool,maxWidth:A.default.oneOf(["none","sm","md","lg","xl","2xl"])};re.defaultProps={gap:1,direction:"row"};var We=i(require("react")),Y=i(require("prop-types"));var Ie=i(require("styled-components")),Re=(0,Ie.default)(z)`
+`,re=e=>{let{children:t,gap:r,direction:o,align:n,justify:s,maxWidth:a,itemFlex:d,padding:p}=e;return me.default.createElement(z,{maxWidth:a,padding:p},me.default.createElement(Xe,{gap:r,align:n,justify:s,direction:o,style:{"--flex-gap":e.gap},itemFlex:d},t))};re.propTypes={gap:k.default.number,align:k.default.string,justify:k.default.string,direction:k.default.string,itemFlex:k.default.oneOfType([k.default.string,k.default.array]),padding:k.default.bool,maxWidth:k.default.oneOf(["none","sm","md","lg","xl","2xl"])};re.defaultProps={gap:1,direction:"row"};var ze=i(require("react")),Y=i(require("prop-types"));var We=i(require("styled-components")),Re=(0,We.default)(z)`
   display: grid;
   grid-gap: ${e=>`${e.gap}rem`};
+  /* add a fallback here for older browsers */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(${e=>e.wrapWidth}px, 1fr)
+  );
+
   grid-template-columns: repeat(
     auto-fill,
     minmax(min(${e=>e.wrapWidth}px, 40%), 1fr)
@@ -262,7 +261,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   @media (max-width: 767px) {
     grid-gap: ${e=>`${e.gapMob}rem`};
   }
-`,ie=e=>{let{children:t}=e;return We.default.createElement(Re,{...e},t)};ie.propTypes={gap:Y.default.number,wrapWidth:Y.default.number,padding:Y.default.bool,maxWidth:Y.default.oneOf(["none","sm","md","lg","xl","2xl"])};ie.defaultProps={gap:1,wrapWidth:340};var j=i(require("react")),m=i(require("prop-types")),G=i(require("styled-components"));var w=i(require("react")),$=i(require("prop-types")),Ne=i(require("styled-components")),et=Ne.default.div`
+`,ie=e=>{let{children:t}=e;return ze.default.createElement(Re,{...e},t)};ie.propTypes={gap:Y.default.number,wrapWidth:Y.default.number,padding:Y.default.bool,maxWidth:Y.default.oneOf(["none","sm","md","lg","xl","2xl"])};ie.defaultProps={gap:1,wrapWidth:340};var j=i(require("react")),m=i(require("prop-types")),G=i(require("styled-components"));var w=i(require("react")),A=i(require("prop-types")),Ie=i(require("styled-components")),et=Ie.default.div`
   display: block;
   width: 100%;
   position: relative;
@@ -299,7 +298,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
         }
       `).join("")}
   }
-`,W=e=>{let{width:t,alt:r,src:o,quality:n,sizes:s,height:a,backgroundColor:p,className:d}=e,l=(0,w.useRef)(null);(0,w.useEffect)(()=>{let u=E=>{E.forEach(J=>{if(J.isIntersecting){let F=Array.from(l.current.querySelectorAll("source"));l.current.lastChild.classList.add("loaded"),F.forEach(xe=>{xe.srcset=xe.dataset.srcset})}})},b={threshold:0,root:null,rootMargin:"-50px 0px 0px 0px"},B=new IntersectionObserver(u,b);return B.observe(l.current.querySelector("img")),()=>B.disconnect()},[l]);let f=[.25,.5,1,1.25,1.5,2,2.5],v=["webp","jpeg"],T=({type:u,width:b,src:B})=>{let E=f.flatMap(J=>{let F=b*J;return F<1920?`${B}.${u}?w=${F}&qlt=${n} ${F}w`:[]});return C||E.push(`${B}.${u}?w=1920&qlt=${n} 1920w`),E.join(",")},C=Array.isArray(o),V=C?o[0]:o,q;return C&&([,...q]=o),w.default.createElement(et,{width:t,height:a,backgroundColor:p,isArtDirected:C,artDirectedImages:q,className:d},w.default.createElement("div",null),w.default.createElement("picture",{ref:l},C&&q.map(u=>v.map((b,B)=>w.default.createElement("source",{key:B,type:`image/${b}`,"data-srcset":T({type:b,...u,isArtDirected:!0}),sizes:s,media:u.media}))),v.map((u,b)=>w.default.createElement("source",{key:b,type:`image/${u}`,"data-srcset":T({type:u,width:t,src:V,isArtDirected:!1}),sizes:s})),w.default.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:r,loading:"lazy"})))};W.propTypes={width:$.default.number,alt:$.default.string.isRequired,src:$.default.oneOfType([$.default.string,$.default.array]).isRequired,quality:$.default.number,sizes:$.default.string,height:$.default.number,backgroundColor:$.default.string};W.defaultProps={backgroundColor:"#ECECF2",quality:80};var ge=i(require("react")),K=i(require("styled-components")),g=i(require("prop-types"));var tt=K.default.div`
+`,I=e=>{let{width:t,alt:r,src:o,quality:n,sizes:s,height:a,backgroundColor:d,className:p,imageTypes:c=["webp","jpeg"]}=e,l=(0,w.useRef)(null);(0,w.useEffect)(()=>{let h=E=>{E.forEach(J=>{if(J.isIntersecting){let F=Array.from(l.current.querySelectorAll("source"));l.current.lastChild.classList.add("loaded"),F.forEach(ue=>{ue.srcset=ue.dataset.srcset})}})},b={threshold:0,root:null,rootMargin:"-50px 0px 0px 0px"},S=new IntersectionObserver(h,b);return S.observe(l.current.querySelector("img")),()=>S.disconnect()},[l]);let $=[.25,.5,1,1.25,1.5,2,2.5],T=({type:h,width:b,src:S})=>{let E=$.flatMap(J=>{let F=b*J;return F<1920?`${S}.${h}?w=${F}&qlt=${n} ${F}w`:[]});return C||E.push(`${S}.${h}?w=1920&qlt=${n} 1920w`),E.join(",")},C=Array.isArray(o),V=C?o[0]:o,q;return C&&([,...q]=o),w.default.createElement(et,{width:t,height:a,backgroundColor:d,isArtDirected:C,artDirectedImages:q,className:p},w.default.createElement("div",null),w.default.createElement("picture",{ref:l},C&&q.map(h=>c.map((b,S)=>w.default.createElement("source",{key:S,type:`image/${b}`,"data-srcset":T({type:b,...h,isArtDirected:!0}),sizes:s,media:h.media}))),c.map((h,b)=>w.default.createElement("source",{key:b,type:`image/${h}`,"data-srcset":T({type:h,width:t,src:V,isArtDirected:!1}),sizes:s})),w.default.createElement("img",{src:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",alt:r,loading:"lazy"})))};I.propTypes={width:A.default.number,alt:A.default.string.isRequired,src:A.default.oneOfType([A.default.string,A.default.array]).isRequired,quality:A.default.number,sizes:A.default.string,height:A.default.number,backgroundColor:A.default.string};I.defaultProps={backgroundColor:"#ECECF2",quality:80};var ce=i(require("react")),K=i(require("styled-components")),f=i(require("prop-types"));var tt=K.default.div`
   display: flex;
   flex-direction: ${e=>e.direction};
   justify-content: ${e=>e.justify};
@@ -329,7 +328,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
         }
       }
     `}
-`,O=e=>{let{as:t,direction:r,gap:o,align:n,justify:s,className:a,children:p,maxWidth:d,style:l,padding:f}=e;return ge.default.createElement(z,{maxWidth:d,padding:f},ge.default.createElement(tt,{className:a,as:t,align:n,justify:s,direction:r,style:{...l,"--stack-gap":o}},p))};O.propTypes={as:g.default.string,className:g.default.string,style:g.default.string,gap:g.default.number,align:g.default.string,justify:g.default.string,direction:g.default.string,itemFlex:g.default.oneOfType([g.default.string,g.default.array]),padding:g.default.bool,maxWidth:g.default.oneOf(["none","sm","md","lg","xl","2xl"])};O.defaultProps={as:"div",direction:"column",gap:1.5,align:"stretch",justify:"flex-start"};var rt=(0,G.default)(c)`
+`,O=e=>{let{as:t,direction:r,gap:o,align:n,justify:s,className:a,children:d,maxWidth:p,style:c,padding:l}=e;return ce.default.createElement(z,{maxWidth:p,padding:l},ce.default.createElement(tt,{className:a,as:t,align:n,justify:s,direction:r,style:{...c,"--stack-gap":o}},d))};O.propTypes={as:f.default.string,className:f.default.string,style:f.default.string,gap:f.default.number,align:f.default.string,justify:f.default.string,direction:f.default.string,itemFlex:f.default.oneOfType([f.default.string,f.default.array]),padding:f.default.bool,maxWidth:f.default.oneOf(["none","sm","md","lg","xl","2xl"])};O.defaultProps={as:"div",direction:"column",gap:1.5,align:"stretch",justify:"flex-start"};var rt=(0,G.default)(g)`
   --max-width: calc(400 / 16 * 1rem);
   border-radius: var(--border-radius);
   background: var(--background);
@@ -377,20 +376,29 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
   padding: var(--padding);
   background: var(--background);
   display: block;
-  max-width: clamp(min(240px, 70%), 30vw, 380px);
-  max-height: clamp(100px, 10vw, 140px);
+  /* fallback for older browsers */
+  max-width: 380px;
+  max-height: 140px;
+  @media (max-width: 767px) {
+    max-width: 240px;
+    max-height: 140px;
+  }
+  @supports (max-width: clamp(min(240px, 70%), 30vw, 380px)) {
+    max-width: clamp(min(240px, 70%), 30vw, 380px);
+    max-height: clamp(100px, 10vw, 140px);
+  }
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: left;
-`,oe=e=>{let{className:t,buttonText:r="shop now",buttonType:o,buttonVariant:n="fill",link:s,logo:a,subcopy:p,noContentBackground:d,noLogoBackground:l,contentBackground:f,contentColor:v,width:T,height:C,sizes:V,alt:q,src:u}=e,b={width:T,height:C,sizes:V,src:u,alt:q},B={"--padding":0,"--background":"none","--color":v||"var(--primary-black)"},E={"--background":"none","--padding":"none"};return j.default.createElement(it,{href:s,style:d?{...B}:{...{"--background":f||"var(--primary-black)","--color":v||"var(--primary-white)"}},className:t,contentColor:v,contentBackground:f},j.default.createElement(W,{...b}),j.default.createElement(ot,{gap:d?1.5:.5,noContentBackground:d},j.default.createElement(at,{src:a,alt:"logo",style:l?{...E}:{}}),j.default.createElement(rt,null,p),j.default.createElement(H,{text:r,variant:n,type:o})))};oe.propTypes={className:m.default.string,buttonText:m.default.string,buttonVariant:m.default.string,buttonType:m.default.string,link:m.default.string.isRequired,logo:m.default.string,subcopy:m.default.string,contentBackground:m.default.string,contentColor:m.default.string,alt:m.default.string.isRequired,src:m.default.array.isRequired,width:m.default.number,height:m.default.number,sizes:m.default.string,noLogoBackground:m.default.bool,noContentBackground:m.default.bool};oe.defaultProps={width:1440,height:640,sizes:"100vw"};var he=i(require("react")),ae=i(require("prop-types")),x=i(require("styled-components"));var Q=i(require("react")),fe=i(require("styled-components")),ue=i(require("prop-types"));var nt=fe.default.div`
+`,oe=e=>{let{className:t,buttonText:r="shop now",buttonType:o,buttonVariant:n="fill",link:s,logo:a,subcopy:d,noContentBackground:p,noLogoBackground:c,contentBackground:l,contentColor:$,width:T,height:C,sizes:V,alt:q,src:h}=e,b={width:T,height:C,sizes:V,src:h,alt:q},S={"--padding":0,"--background":"none","--color":$||"var(--primary-black)"},E={"--background":"none","--padding":"none"};return j.default.createElement(it,{href:s,style:p?{...S}:{...{"--background":l||"var(--primary-black)","--color":$||"var(--primary-white)"}},className:t,contentColor:$,contentBackground:l},j.default.createElement(I,{...b}),j.default.createElement(ot,{gap:p?1.5:.5,noContentBackground:p},j.default.createElement(at,{src:a,alt:"logo",style:c?{...E}:{}}),j.default.createElement(rt,null,d),j.default.createElement(H,{text:r,variant:n,type:o})))};oe.propTypes={className:m.default.string,buttonText:m.default.string,buttonVariant:m.default.string,buttonType:m.default.string,link:m.default.string.isRequired,logo:m.default.string,subcopy:m.default.string,contentBackground:m.default.string,contentColor:m.default.string,alt:m.default.string.isRequired,src:m.default.array.isRequired,width:m.default.number,height:m.default.number,sizes:m.default.string,noLogoBackground:m.default.bool,noContentBackground:m.default.bool};oe.defaultProps={width:1440,height:640,sizes:"100vw"};var he=i(require("react")),ae=i(require("prop-types")),x=i(require("styled-components"));var Q=i(require("react")),ge=i(require("styled-components")),fe=i(require("prop-types"));var nt=ge.default.div`
   width: 100%;
 
   a {
     display: block;
     position: relative;
   }
-`,st=(0,fe.default)(c)`
+`,st=(0,ge.default)(g)`
   position: absolute;
   bottom: 1rem;
   left: 1rem;
@@ -402,7 +410,7 @@ var Pe=Object.create,X=Object.defineProperty;var je=Object.getOwnPropertyDescrip
     bottom: 0.75rem;
     left: 0.75rem;
   }
-`,Z=e=>{let{text:t,link:r,className:o,...n}=e;return Q.default.createElement(nt,{className:o},Q.default.createElement("a",{href:r},Q.default.createElement(W,{...n}),t&&Q.default.createElement(st,{heading:!0},t)))};Z.propTypes={link:ue.default.string,text:ue.default.string};var lt=x.default.div`
+`,Z=e=>{let{text:t,link:r,className:o,...n}=e;return Q.default.createElement(nt,{className:o},Q.default.createElement("a",{href:r},Q.default.createElement(I,{...n}),t&&Q.default.createElement(st,{heading:!0},t)))};Z.propTypes={link:fe.default.string,text:fe.default.string};var lt=x.default.div`
   display: flex;
   margin-left: auto;
   margin-right: auto;
