@@ -6,7 +6,7 @@ import { Carousel } from '../Carousel';
 import useSWR from 'swr';
 import { fetcher } from '../../utils/fetcher';
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   width: 100%;
 `;
 

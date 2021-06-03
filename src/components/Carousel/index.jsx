@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { useKeenSlider } from 'keen-slider/react';
 import { ArrowLeft, ArrowRight } from 'react-feather';
-import { Wrapper as BlogpostsWrapper } from '../Blogposts';
 
 // this config will also be used for the
 export const keenConfig = {
@@ -62,17 +61,13 @@ const Wrapper = styled.div`
 const Navigation = styled.div`
   --nav-inset: 2rem;
   position: absolute;
-  bottom: var(--nav-inset);
-  right: var(--nav-inset);
 
-  /* if the carousel exists within the Blogposts component move the navigation arrows */
-  @media (min-width: 1024px) {
-    ${BlogpostsWrapper} & {
-      --nav-inset: 2rem;
-      bottom: auto;
-      top: var(--nav-inset);
-    }
-  }
+  ${(props) =>
+    props.position.map(
+      (pos) => css`
+        ${pos}: var(--nav-inset);
+      `
+    )}
 
   @media (max-width: 1024px) {
     --nav-inset: 0.75rem;
@@ -126,6 +121,7 @@ export const Carousel = ({
   slidesPerViewMob = 1,
   spacing = 0,
   offsetStart,
+  arrowsPosition = ['bottom', 'right'],
 }) => {
   const [sliderRef, slider] = useKeenSlider({
     ...keenConfig,
@@ -172,7 +168,7 @@ export const Carousel = ({
           )}
         </div>
       </CarouselWrapper>
-      <Navigation>
+      <Navigation position={arrowsPosition}>
         <Button className="keen-prev" onClick={() => prev()}>
           <ArrowLeft size={18} />
         </Button>
