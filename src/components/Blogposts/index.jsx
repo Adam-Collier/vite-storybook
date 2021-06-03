@@ -18,6 +18,7 @@ const ConditionalWrapper = (props) => {
     slidesPerViewMob,
     spacing,
     offsetStart,
+    arrowsPosition = ['top', 'right'],
   } = props;
 
   return isCarousel ? (
@@ -26,6 +27,7 @@ const ConditionalWrapper = (props) => {
       spacing={spacing}
       slidesPerViewMob={slidesPerViewMob}
       offsetStart={offsetStart}
+      arrowsPosition={arrowsPosition}
     >
       {children}
     </Carousel>
