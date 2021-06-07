@@ -36,6 +36,8 @@ Grid.propTypes = {
   padding: PropTypes.bool,
   /** What max width should the element have (if any) */
   maxWidth: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl']),
+  /** If the predefined max width values don't accomodate some special scenario, you can add a custom max width */
+  customMaxWidth: PropTypes.number,
 };
 
 Grid.defaultProps = {

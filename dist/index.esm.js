@@ -642,12 +642,14 @@ var Flex = (props) => {
     align,
     justify,
     maxWidth,
+    customMaxWidth,
     itemFlex,
     padding
   } = props;
   return /* @__PURE__ */ React6.createElement(Row, {
     maxWidth,
-    padding
+    padding,
+    customMaxWidth
   }, /* @__PURE__ */ React6.createElement(Wrapper4, {
     gap,
     align,
@@ -664,7 +666,8 @@ Flex.propTypes = {
   direction: PropTypes7.string,
   itemFlex: PropTypes7.oneOfType([PropTypes7.string, PropTypes7.array]),
   padding: PropTypes7.bool,
-  maxWidth: PropTypes7.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: PropTypes7.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: PropTypes7.number
 };
 Flex.defaultProps = {
   gap: 1,
@@ -703,7 +706,8 @@ Grid.propTypes = {
   gap: PropTypes8.number,
   wrapWidth: PropTypes8.number,
   padding: PropTypes8.bool,
-  maxWidth: PropTypes8.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: PropTypes8.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: PropTypes8.number
 };
 Grid.defaultProps = {
   gap: 1,
@@ -906,12 +910,14 @@ var Stack = (props) => {
     className,
     children,
     maxWidth,
+    customMaxWidth,
     style,
     padding
   } = props;
   return /* @__PURE__ */ React9.createElement(Row, {
     maxWidth,
-    padding
+    padding,
+    customMaxWidth
   }, /* @__PURE__ */ React9.createElement(Wrapper6, {
     className,
     as,
@@ -931,7 +937,8 @@ Stack.propTypes = {
   direction: PropTypes10.string,
   itemFlex: PropTypes10.oneOfType([PropTypes10.string, PropTypes10.array]),
   padding: PropTypes10.bool,
-  maxWidth: PropTypes10.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: PropTypes10.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: PropTypes10.number
 };
 Stack.defaultProps = {
   as: "div",

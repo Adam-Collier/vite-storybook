@@ -683,12 +683,14 @@ var Flex = (props) => {
     align,
     justify,
     maxWidth,
+    customMaxWidth,
     itemFlex,
     padding
   } = props;
   return /* @__PURE__ */ import_react7.default.createElement(Row, {
     maxWidth,
-    padding
+    padding,
+    customMaxWidth
   }, /* @__PURE__ */ import_react7.default.createElement(Wrapper4, {
     gap,
     align,
@@ -705,7 +707,8 @@ Flex.propTypes = {
   direction: import_prop_types7.default.string,
   itemFlex: import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.array]),
   padding: import_prop_types7.default.bool,
-  maxWidth: import_prop_types7.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: import_prop_types7.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: import_prop_types7.default.number
 };
 Flex.defaultProps = {
   gap: 1,
@@ -744,7 +747,8 @@ Grid.propTypes = {
   gap: import_prop_types8.default.number,
   wrapWidth: import_prop_types8.default.number,
   padding: import_prop_types8.default.bool,
-  maxWidth: import_prop_types8.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: import_prop_types8.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: import_prop_types8.default.number
 };
 Grid.defaultProps = {
   gap: 1,
@@ -947,12 +951,14 @@ var Stack = (props) => {
     className,
     children,
     maxWidth,
+    customMaxWidth,
     style,
     padding
   } = props;
   return /* @__PURE__ */ import_react10.default.createElement(Row, {
     maxWidth,
-    padding
+    padding,
+    customMaxWidth
   }, /* @__PURE__ */ import_react10.default.createElement(Wrapper6, {
     className,
     as,
@@ -972,7 +978,8 @@ Stack.propTypes = {
   direction: import_prop_types10.default.string,
   itemFlex: import_prop_types10.default.oneOfType([import_prop_types10.default.string, import_prop_types10.default.array]),
   padding: import_prop_types10.default.bool,
-  maxWidth: import_prop_types10.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"])
+  maxWidth: import_prop_types10.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: import_prop_types10.default.number
 };
 Stack.defaultProps = {
   as: "div",

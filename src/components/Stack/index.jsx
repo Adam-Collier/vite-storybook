@@ -49,12 +49,13 @@ export const Stack = (props) => {
     className,
     children,
     maxWidth,
+    customMaxWidth,
     style,
     padding,
   } = props;
 
   return (
-    <Row maxWidth={maxWidth} padding={padding}>
+    <Row maxWidth={maxWidth} padding={padding} customMaxWidth={customMaxWidth}>
       <Wrapper
         className={className}
         as={as}
@@ -90,6 +91,8 @@ Stack.propTypes = {
   padding: PropTypes.bool,
   /** What max width should the element have (if any) */
   maxWidth: PropTypes.oneOf(['none', 'sm', 'md', 'lg', 'xl', '2xl']),
+  /** If the predefined max width values don't accomodate some special scenario, you can add a custom max width */
+  customMaxWidth: PropTypes.number,
 };
 
 Stack.defaultProps = {
