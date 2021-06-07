@@ -75,7 +75,7 @@ var TextElement = import_styled_components.default.p`
   line-height: ${(props) => props.heading || props.titling ? 1.3 : props.lineHeight};
   font-weight: ${(props) => props.heading || props.titling ? 600 : props.weight};
   font-family: ${(props) => !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
-  color: inherit;
+  color: ${(props) => props.color ? `var(--${props.color})` : "inherit"};
 
   ${(props) => props.titling && import_styled_components.css`
       font-family: 'titling-gothic-fb-wide', missguided, arial, sans-serif;
@@ -103,6 +103,7 @@ var Text = (props) => {
   const {
     element,
     children,
+    color,
     size,
     align,
     heading,
@@ -116,6 +117,7 @@ var Text = (props) => {
   return /* @__PURE__ */ import_react.default.createElement(TextElement, {
     as: element,
     style: {fontSize: `var(--text-${size})`, textAlign: align},
+    color,
     heading,
     titling,
     className,
@@ -145,7 +147,15 @@ Text.propTypes = {
   element: import_prop_types.default.string,
   weight: import_prop_types.default.number,
   lineHeight: import_prop_types.default.number,
-  truncate: import_prop_types.default.number
+  truncate: import_prop_types.default.number,
+  color: import_prop_types.default.oneOf([
+    "primary-black",
+    "primary-white",
+    "grey-1",
+    "grey-2",
+    "grey-3",
+    "grey-4"
+  ])
 };
 Text.defaultProps = {
   heading: false,

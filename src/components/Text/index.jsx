@@ -21,7 +21,7 @@ const TextElement = styled.p`
     props.heading || props.titling ? 600 : props.weight};
   font-family: ${(props) =>
     !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
-  color: inherit;
+  color: ${(props) => (props.color ? `var(--${props.color})` : 'inherit')};
 
   ${(props) =>
     props.titling &&
@@ -56,6 +56,7 @@ export const Text = (props) => {
   const {
     element,
     children,
+    color,
     size,
     align,
     heading,
@@ -71,6 +72,7 @@ export const Text = (props) => {
     <TextElement
       as={element}
       style={{ fontSize: `var(--text-${size})`, textAlign: align }}
+      color={color}
       heading={heading}
       titling={titling}
       className={className}
@@ -117,6 +119,15 @@ Text.propTypes = {
   lineHeight: PropTypes.number,
   /** The number of lines you want to truncate to */
   truncate: PropTypes.number,
+  /** The text color. Limited to the CSS variables we us in the design system. */
+  color: PropTypes.oneOf([
+    'primary-black',
+    'primary-white',
+    'grey-1',
+    'grey-2',
+    'grey-3',
+    'grey-4',
+  ]),
 };
 
 Text.defaultProps = {

@@ -6,6 +6,10 @@ export const GlobalStyles = createGlobalStyle`
       --primary-white: hsl(0, 0%, 100%);
       --primary-black-hover: hsl(0, 0%, 18%);
       --primary-white-hover: hsl(0, 0%, 90%);
+      --grey-1: #EFF0F2;
+      --grey-2: #BBBBBB;
+      --grey-3: #808080;
+      --grey-4: #474747;
       --border-radius: 3px;
     }
     

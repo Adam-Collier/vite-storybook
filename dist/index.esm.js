@@ -34,7 +34,7 @@ var TextElement = styled.p`
   line-height: ${(props) => props.heading || props.titling ? 1.3 : props.lineHeight};
   font-weight: ${(props) => props.heading || props.titling ? 600 : props.weight};
   font-family: ${(props) => !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
-  color: inherit;
+  color: ${(props) => props.color ? `var(--${props.color})` : "inherit"};
 
   ${(props) => props.titling && css`
       font-family: 'titling-gothic-fb-wide', missguided, arial, sans-serif;
@@ -62,6 +62,7 @@ var Text = (props) => {
   const {
     element,
     children,
+    color,
     size,
     align,
     heading,
@@ -75,6 +76,7 @@ var Text = (props) => {
   return /* @__PURE__ */ React.createElement(TextElement, {
     as: element,
     style: {fontSize: `var(--text-${size})`, textAlign: align},
+    color,
     heading,
     titling,
     className,
@@ -104,7 +106,15 @@ Text.propTypes = {
   element: PropTypes.string,
   weight: PropTypes.number,
   lineHeight: PropTypes.number,
-  truncate: PropTypes.number
+  truncate: PropTypes.number,
+  color: PropTypes.oneOf([
+    "primary-black",
+    "primary-white",
+    "grey-1",
+    "grey-2",
+    "grey-3",
+    "grey-4"
+  ])
 };
 Text.defaultProps = {
   heading: false,
