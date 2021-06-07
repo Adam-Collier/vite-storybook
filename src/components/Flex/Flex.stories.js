@@ -12,10 +12,30 @@ export default props;
 
 const Template = (args) => (
   <Flex {...args}>
-    <Image src="https://media.missguided.com/i/missguided/playboy_storybook_default" />
-    <Image src="https://media.missguided.com/i/missguided/playboy_storybook_default" />
-    <Image src="https://media.missguided.com/i/missguided/playboy_storybook_default" />
-    <Image src="https://media.missguided.com/i/missguided/playboy_storybook_default" />
+    <Image
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="flex image"
+      width={200}
+      height={200}
+    />
+    <Image
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="flex image"
+      width={200}
+      height={200}
+    />
+    <Image
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="flex image"
+      width={200}
+      height={200}
+    />
+    <Image
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="flex image"
+      width={200}
+      height={200}
+    />
   </Flex>
 );
 

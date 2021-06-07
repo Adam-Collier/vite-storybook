@@ -12,10 +12,38 @@ export default props;
 
 const Template = (args) => (
   <Grid {...args}>
-    <ShoppableImage />
-    <ShoppableImage />
-    <ShoppableImage />
-    <ShoppableImage />
+    <ShoppableImage
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="grid image"
+      width={200}
+      height={200}
+      text="shop new in"
+      link="https://www.missguided.co.uk/new-in"
+    />
+    <ShoppableImage
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="grid image"
+      width={200}
+      height={200}
+      text="shop new in"
+      link="https://www.missguided.co.uk/new-in"
+    />
+    <ShoppableImage
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="grid image"
+      width={200}
+      height={200}
+      text="shop new in"
+      link="https://www.missguided.co.uk/new-in"
+    />
+    <ShoppableImage
+      src="https://media.missguided.com/i/missguided/playboy_storybook_default"
+      alt="grid image"
+      width={200}
+      height={200}
+      text="shop new in"
+      link="https://www.missguided.co.uk/new-in"
+    />
   </Grid>
 );
 
