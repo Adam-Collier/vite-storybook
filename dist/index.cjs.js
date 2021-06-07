@@ -625,13 +625,18 @@ var Row = import_styled_components6.default.section`
   overflow: hidden;
 
   max-width: ${(props) => {
-  return props.maxWidth ? `var(--width-${props.maxWidth})` : "none";
+  if (props.customMaxWidth) {
+    return `${props.customMaxWidth}px`;
+  } else if (props.maxWidth) {
+    return `var(--width-${props.maxWidth})`;
+  }
 }};
 
   padding: ${(props) => props.padding && `0 1rem`};
 `;
 Row.propTypes = {
   maxWidth: import_prop_types6.default.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: import_prop_types6.default.number,
   padding: import_prop_types6.default.bool
 };
 

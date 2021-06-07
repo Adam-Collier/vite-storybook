@@ -40,4 +40,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   maxWidth: 'none',
   padding: true,
+  customMaxWidth: 0,
 };

@@ -584,13 +584,18 @@ var Row = styled6.section`
   overflow: hidden;
 
   max-width: ${(props) => {
-  return props.maxWidth ? `var(--width-${props.maxWidth})` : "none";
+  if (props.customMaxWidth) {
+    return `${props.customMaxWidth}px`;
+  } else if (props.maxWidth) {
+    return `var(--width-${props.maxWidth})`;
+  }
 }};
 
   padding: ${(props) => props.padding && `0 1rem`};
 `;
 Row.propTypes = {
   maxWidth: PropTypes6.oneOf(["none", "sm", "md", "lg", "xl", "2xl"]),
+  customMaxWidth: PropTypes6.number,
   padding: PropTypes6.bool
 };
 
