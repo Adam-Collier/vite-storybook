@@ -23,7 +23,7 @@ build({
   external,
   format: 'esm',
   platform: 'browser',
-  minify: true,
+  minify: false,
 }).catch(() => process.exit(1));
 
 // build the common js file
@@ -34,7 +34,7 @@ build({
   format: 'cjs',
   outfile: 'dist/index.cjs.js',
   external,
-  minify: true,
+  minify: false,
   define: {
     'process.env.NODE_ENV': '"production"',
     'process.env.DEBUG': 'false',
