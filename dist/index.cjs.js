@@ -72,10 +72,15 @@ var TextElement = import_styled_components.default.p`
   --text-xs: calc(12 / 16 * 1rem);
   --text-xxs: calc(10 / 16 * 1rem);
 
-  line-height: ${(props) => props.heading ? 1.3 : props.lineHeight};
-  font-weight: ${(props) => props.heading ? 600 : props.weight};
-  font-family: ${(props) => !props.heading && `"Helvetica Neue", Arial, sans-serif`};
+  line-height: ${(props) => props.heading || props.titling ? 1.3 : props.lineHeight};
+  font-weight: ${(props) => props.heading || props.titling ? 600 : props.weight};
+  font-family: ${(props) => !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
   color: inherit;
+
+  ${(props) => props.titling && import_styled_components.css`
+      font-family: 'titling-gothic-fb-wide', missguided, arial, sans-serif;
+      letter-spacing: 0.5px;
+    `}
 
   ${(props) => props.heading && import_styled_components.css`
       font-family: 'HelveticaNeue-CondensedBold', 'HelveticaNeueBoldCondensed',
@@ -101,6 +106,7 @@ var Text = (props) => {
     size,
     align,
     heading,
+    titling,
     className,
     lineHeight,
     weight,
@@ -111,6 +117,7 @@ var Text = (props) => {
     as: element,
     style: {fontSize: `var(--text-${size})`, textAlign: align},
     heading,
+    titling,
     className,
     lineHeight,
     weight,
@@ -120,6 +127,7 @@ var Text = (props) => {
 };
 Text.propTypes = {
   heading: import_prop_types.default.bool,
+  titling: import_prop_types.default.bool,
   align: import_prop_types.default.oneOf(["left", "center", "right"]),
   size: import_prop_types.default.oneOf([
     "5xl",
