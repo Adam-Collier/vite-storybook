@@ -15,11 +15,20 @@ const TextElement = styled.p`
   --text-xs: calc(12 / 16 * 1rem);
   --text-xxs: calc(10 / 16 * 1rem);
 
-  line-height: ${(props) => (props.heading ? 1.3 : props.lineHeight)};
-  font-weight: ${(props) => (props.heading ? 600 : props.weight)};
+  line-height: ${(props) =>
+    props.heading || props.titling ? 1.3 : props.lineHeight};
+  font-weight: ${(props) =>
+    props.heading || props.titling ? 600 : props.weight};
   font-family: ${(props) =>
-    !props.heading && `"Helvetica Neue", Arial, sans-serif`};
+    !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
   color: inherit;
+
+  ${(props) =>
+    props.titling &&
+    css`
+      font-family: 'titling-gothic-fb-wide', missguided, arial, sans-serif;
+      letter-spacing: 0.5px;
+    `}
 
   ${(props) =>
     props.heading &&
@@ -50,6 +59,7 @@ export const Text = (props) => {
     size,
     align,
     heading,
+    titling,
     className,
     lineHeight,
     weight,
@@ -62,6 +72,7 @@ export const Text = (props) => {
       as={element}
       style={{ fontSize: `var(--text-${size})`, textAlign: align }}
       heading={heading}
+      titling={titling}
       className={className}
       lineHeight={lineHeight}
       weight={weight}
@@ -78,6 +89,10 @@ Text.propTypes = {
    * Boolean indicating whether the text should be a heading or not
    */
   heading: PropTypes.bool,
+  /**
+   * Boolean indicating whether the text should use titling or not
+   */
+  titling: PropTypes.bool,
   /** What alignment should the text have? */
   align: PropTypes.oneOf(['left', 'center', 'right']),
   /** How large should the text be */
