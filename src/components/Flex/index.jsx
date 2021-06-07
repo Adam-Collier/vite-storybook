@@ -55,6 +55,7 @@ export const Flex = (props) => {
     customMaxWidth,
     itemFlex,
     padding,
+    className,
   } = props;
 
   return (
@@ -62,6 +63,7 @@ export const Flex = (props) => {
       <Wrapper
         gap={gap}
         align={align}
+        className={className}
         justify={justify}
         direction={direction}
         style={{ '--flex-gap': props.gap }}

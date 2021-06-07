@@ -644,7 +644,8 @@ var Flex = (props) => {
     maxWidth,
     customMaxWidth,
     itemFlex,
-    padding
+    padding,
+    className
   } = props;
   return /* @__PURE__ */ React6.createElement(Row, {
     maxWidth,
@@ -653,6 +654,7 @@ var Flex = (props) => {
   }, /* @__PURE__ */ React6.createElement(Wrapper4, {
     gap,
     align,
+    className,
     justify,
     direction,
     style: {"--flex-gap": props.gap},

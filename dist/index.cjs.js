@@ -685,7 +685,8 @@ var Flex = (props) => {
     maxWidth,
     customMaxWidth,
     itemFlex,
-    padding
+    padding,
+    className
   } = props;
   return /* @__PURE__ */ import_react7.default.createElement(Row, {
     maxWidth,
@@ -694,6 +695,7 @@ var Flex = (props) => {
   }, /* @__PURE__ */ import_react7.default.createElement(Wrapper4, {
     gap,
     align,
+    className,
     justify,
     direction,
     style: {"--flex-gap": props.gap},
