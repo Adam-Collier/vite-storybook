@@ -100,8 +100,6 @@ Text.propTypes = {
   weight: PropTypes.number,
   /** Optional line height (only use if defaults don't satify) */
   lineHeight: PropTypes.number,
-  /** Text contents */
-  children: PropTypes.string,
   /** The number of lines you want to truncate to */
   truncate: PropTypes.number,
 };
