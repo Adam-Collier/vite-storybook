@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled(Row)`
   display: grid;
-  grid-gap: ${(props) => `${props.gap}rem`};
+  grid-gap: ${(props) => props.gap && `${props.gap}rem`};
   /* add a fallback here for older browsers */
   grid-template-columns: repeat(
     auto-fill,
