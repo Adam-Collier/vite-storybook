@@ -723,7 +723,7 @@ var import_prop_types8 = __toModule(require("prop-types"));
 var import_styled_components8 = __toModule(require("styled-components"));
 var Wrapper5 = (0, import_styled_components8.default)(Row)`
   display: grid;
-  grid-gap: ${(props) => `${props.gap}rem`};
+  grid-gap: ${(props) => props.gap && `${props.gap}rem`};
   /* add a fallback here for older browsers */
   grid-template-columns: repeat(
     auto-fill,

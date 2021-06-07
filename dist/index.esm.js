@@ -682,7 +682,7 @@ import PropTypes8 from "prop-types";
 import styled8 from "styled-components";
 var Wrapper5 = styled8(Row)`
   display: grid;
-  grid-gap: ${(props) => `${props.gap}rem`};
+  grid-gap: ${(props) => props.gap && `${props.gap}rem`};
   /* add a fallback here for older browsers */
   grid-template-columns: repeat(
     auto-fill,
