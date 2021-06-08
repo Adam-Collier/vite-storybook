@@ -16,6 +16,8 @@
     "build-storybook": "build-storybook",
     "build:rollup": "rollup -c",
     "build:esbuild": "node esbuild",
+    "build:types": "npx tsc",
+    "build:library": "node esbuild && npx tsc",
     "yalc:publish": "node esbuild && yalc publish --push"
   },
   "dependencies": {
@@ -46,6 +48,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^9.1.0",
     "prettier": "^2.3.0",
+    "typescript": "^4.3.2",
     "vite": "^2.2.3",
     "vite-plugin-react-svg": "^0.2.0"
   },
