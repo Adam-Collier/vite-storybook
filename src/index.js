@@ -3,6 +3,7 @@ import { Blogposts } from './components/Blogposts';
 import { Button } from './components/Button';
 import { Carousel } from './components/Carousel';
 import { Flex } from './components/Flex';
+import { GlobalStyles } from './components/GlobalStyles';
 import { Grid } from './components/grid';
 import { HeroBanner } from './components/HeroBanner';
 import { Image } from './components/Image';
@@ -18,6 +19,7 @@ export {
   Button,
   Carousel,
   Flex,
+  GlobalStyles,
   Grid,
   HeroBanner,
   Image,

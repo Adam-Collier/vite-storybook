@@ -29,6 +29,7 @@ __export(exports, {
   Button: () => Button2,
   Carousel: () => Carousel,
   Flex: () => Flex,
+  GlobalStyles: () => GlobalStyles,
   Grid: () => Grid,
   HeroBanner: () => HeroBanner,
   Image: () => Image,
@@ -727,11 +728,60 @@ Flex.defaultProps = {
   direction: "row"
 };
 
+// src/components/GlobalStyles/index.js
+var import_styled_components8 = __toModule(require("styled-components"));
+var GlobalStyles = import_styled_components8.createGlobalStyle`
+:root {
+  --primary-black: hsl(0, 0%, 8%);
+  --primary-white: hsl(0, 0%, 100%);
+  --primary-black-hover: hsl(0, 0%, 18%);
+  --primary-white-hover: hsl(0, 0%, 90%);
+  --border-radius: 3px;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+}
+
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  color: var(--primary-black);
+}
+`;
+
 // src/components/grid/index.jsx
 var import_react8 = __toModule(require("react"));
 var import_prop_types8 = __toModule(require("prop-types"));
-var import_styled_components8 = __toModule(require("styled-components"));
-var Wrapper5 = (0, import_styled_components8.default)(Row)`
+var import_styled_components9 = __toModule(require("styled-components"));
+var Wrapper5 = (0, import_styled_components9.default)(Row)`
   display: grid;
   grid-gap: ${(props) => props.gap && `${props.gap}rem`};
   /* add a fallback here for older browsers */
@@ -770,13 +820,13 @@ Grid.defaultProps = {
 // src/components/HeroBanner/index.jsx
 var import_react11 = __toModule(require("react"));
 var import_prop_types11 = __toModule(require("prop-types"));
-var import_styled_components11 = __toModule(require("styled-components"));
+var import_styled_components12 = __toModule(require("styled-components"));
 
 // src/components/Image/index.jsx
 var import_react9 = __toModule(require("react"));
 var import_prop_types9 = __toModule(require("prop-types"));
-var import_styled_components9 = __toModule(require("styled-components"));
-var ImageWrapper2 = import_styled_components9.default.div`
+var import_styled_components10 = __toModule(require("styled-components"));
+var ImageWrapper2 = import_styled_components10.default.div`
   display: block;
   width: 100%;
   position: relative;
@@ -920,9 +970,9 @@ Image.defaultProps = {
 
 // src/components/Stack/index.jsx
 var import_react10 = __toModule(require("react"));
-var import_styled_components10 = __toModule(require("styled-components"));
+var import_styled_components11 = __toModule(require("styled-components"));
 var import_prop_types10 = __toModule(require("prop-types"));
-var Wrapper6 = import_styled_components10.default.div`
+var Wrapper6 = import_styled_components11.default.div`
   display: flex;
   flex-direction: ${(props) => props.direction};
   justify-content: ${(props) => props.justify};
@@ -933,7 +983,7 @@ var Wrapper6 = import_styled_components10.default.div`
     margin-bottom: 0;
   }
 
-  ${(props) => props.direction === "column" && import_styled_components10.css`
+  ${(props) => props.direction === "column" && import_styled_components11.css`
       > * + * {
         margin-top: calc(var(--stack-gap) * 1rem);
 
@@ -943,7 +993,7 @@ var Wrapper6 = import_styled_components10.default.div`
       }
     `}
 
-  ${(props) => props.direction === "row" && import_styled_components10.css`
+  ${(props) => props.direction === "row" && import_styled_components11.css`
       > * + * {
         margin-left: calc(var(--stack-gap) * 1rem);
 
@@ -1002,7 +1052,7 @@ Stack.defaultProps = {
 };
 
 // src/components/HeroBanner/index.jsx
-var Subcopy = (0, import_styled_components11.default)(Text)`
+var Subcopy = (0, import_styled_components12.default)(Text)`
   --max-width: calc(400 / 16 * 1rem);
   border-radius: var(--border-radius);
   background: var(--background);
@@ -1020,7 +1070,7 @@ var Subcopy = (0, import_styled_components11.default)(Text)`
     --max-width: 100%;
   }
 `;
-var Wrapper7 = import_styled_components11.default.a`
+var Wrapper7 = import_styled_components12.default.a`
   --padding: 1rem;
   display: block;
   position: relative;
@@ -1029,7 +1079,7 @@ var Wrapper7 = import_styled_components11.default.a`
     --padding: 0.75rem;
   }
 `;
-var Content = (0, import_styled_components11.default)(Stack)`
+var Content = (0, import_styled_components12.default)(Stack)`
   --content-padding: 2rem;
   position: absolute;
   z-index: 50;
@@ -1049,7 +1099,7 @@ var Content = (0, import_styled_components11.default)(Stack)`
     --content-padding: ${(props) => props.noContentBackground ? "1.5rem" : "0.75rem"};
   }
 `;
-var Logo = import_styled_components11.default.img`
+var Logo = import_styled_components12.default.img`
   padding: var(--padding);
   background: var(--background);
   display: block;
@@ -1156,13 +1206,13 @@ HeroBanner.defaultProps = {
 // src/components/ImageRow/index.jsx
 var import_react13 = __toModule(require("react"));
 var import_prop_types13 = __toModule(require("prop-types"));
-var import_styled_components13 = __toModule(require("styled-components"));
+var import_styled_components14 = __toModule(require("styled-components"));
 
 // src/components/ShoppableImage/index.jsx
 var import_react12 = __toModule(require("react"));
-var import_styled_components12 = __toModule(require("styled-components"));
+var import_styled_components13 = __toModule(require("styled-components"));
 var import_prop_types12 = __toModule(require("prop-types"));
-var Wrapper8 = import_styled_components12.default.div`
+var Wrapper8 = import_styled_components13.default.div`
   width: 100%;
 
   a {
@@ -1170,7 +1220,7 @@ var Wrapper8 = import_styled_components12.default.div`
     position: relative;
   }
 `;
-var StyledText = (0, import_styled_components12.default)(Text)`
+var StyledText = (0, import_styled_components13.default)(Text)`
   position: absolute;
   bottom: 1rem;
   left: 1rem;
@@ -1201,7 +1251,7 @@ ShoppableImage.propTypes = {
 };
 
 // src/components/ImageRow/index.jsx
-var LayoutStyles = import_styled_components13.default.div`
+var LayoutStyles = import_styled_components14.default.div`
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -1219,7 +1269,7 @@ var LayoutStyles = import_styled_components13.default.div`
       width: 50%;
     }
 
-    ${(props) => props.layout === "contrast" && import_styled_components13.css`
+    ${(props) => props.layout === "contrast" && import_styled_components14.css`
         > div {
           width: 50%;
         }
@@ -1229,7 +1279,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "overlap" && import_styled_components13.css`
+    ${(props) => props.layout === "overlap" && import_styled_components14.css`
         padding: 0 10%;
         align-items: flex-start;
 
@@ -1247,7 +1297,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "overlap" && props.reverse && import_styled_components13.css`
+    ${(props) => props.layout === "overlap" && props.reverse && import_styled_components14.css`
         > div:first-of-type {
           margin-left: -2rem;
           margin-right: 0;
@@ -1260,7 +1310,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "sidebyside" && import_styled_components13.css`
+    ${(props) => props.layout === "sidebyside" && import_styled_components14.css`
         padding: 0 5%;
 
         > div:first-of-type {
@@ -1272,7 +1322,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "padded" && import_styled_components13.css`
+    ${(props) => props.layout === "padded" && import_styled_components14.css`
         > div {
           width: 100%;
         }
@@ -1281,7 +1331,7 @@ var LayoutStyles = import_styled_components13.default.div`
   }
 
   @media (max-width: 767px) {
-    ${(props) => props.layout === "contrast" && import_styled_components13.css`
+    ${(props) => props.layout === "contrast" && import_styled_components14.css`
         padding: 0 2rem;
 
         > div:first-of-type {
@@ -1291,7 +1341,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "overlap" && import_styled_components13.css`
+    ${(props) => props.layout === "overlap" && import_styled_components14.css`
         align-items: flex-start;
 
         > div {
@@ -1308,7 +1358,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "overlap" && props.reverse && import_styled_components13.css`
+    ${(props) => props.layout === "overlap" && props.reverse && import_styled_components14.css`
         > div:last-of-type {
           margin-right: -1rem;
           margin-left: 0;
@@ -1321,7 +1371,7 @@ var LayoutStyles = import_styled_components13.default.div`
         }
       `};
 
-    ${(props) => props.layout === "sidebyside" && import_styled_components13.css`
+    ${(props) => props.layout === "sidebyside" && import_styled_components14.css`
         > div:first-of-type {
           width: 90%;
         }
@@ -1399,6 +1449,7 @@ ImageRow.propTypes = {
   Button,
   Carousel,
   Flex,
+  GlobalStyles,
   Grid,
   HeroBanner,
   Image,
