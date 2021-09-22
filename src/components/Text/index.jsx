@@ -22,6 +22,7 @@ const TextElement = styled.p`
   font-family: ${(props) =>
     !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
   color: ${(props) => (props.color ? `var(--${props.color})` : 'inherit')};
+  text-transform: none;
 
   ${(props) =>
     props.titling &&

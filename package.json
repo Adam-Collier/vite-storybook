@@ -6,7 +6,8 @@
   "module": "dist/index.esm.js",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "package.json"
   ],
   "scripts": {
     "dev": "vite",

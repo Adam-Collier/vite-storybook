@@ -77,6 +77,7 @@ var TextElement = import_styled_components.default.p`
   font-weight: ${(props) => props.heading || props.titling ? 600 : props.weight};
   font-family: ${(props) => !props.heading && !props.titling && `"Helvetica Neue", Arial, sans-serif`};
   color: ${(props) => props.color ? `var(--${props.color})` : "inherit"};
+  text-transform: none;
 
   ${(props) => props.titling && import_styled_components.css`
       font-family: 'titling-gothic-fb-wide', missguided, arial, sans-serif;
