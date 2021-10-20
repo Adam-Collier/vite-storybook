@@ -67,12 +67,13 @@ export const Text = (props) => {
     weight,
     spacing,
     truncate,
+    style,
   } = props;
 
   return (
     <TextElement
       as={element}
-      style={{ fontSize: `var(--text-${size})`, textAlign: align }}
+      style={{ fontSize: `var(--text-${size})`, textAlign: align, ...style }}
       color={color}
       heading={heading}
       titling={titling}

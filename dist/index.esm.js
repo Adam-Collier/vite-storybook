@@ -72,11 +72,12 @@ var Text = (props) => {
     lineHeight,
     weight,
     spacing,
-    truncate
+    truncate,
+    style
   } = props;
   return /* @__PURE__ */ React.createElement(TextElement, {
     as: element,
-    style: {fontSize: `var(--text-${size})`, textAlign: align},
+    style: {fontSize: `var(--text-${size})`, textAlign: align, ...style},
     color,
     heading,
     titling,
